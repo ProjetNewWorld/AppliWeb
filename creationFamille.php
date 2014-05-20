@@ -6,10 +6,23 @@
 	<link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-	<h1>Création d'une famille</h1>
-	<form name="connexion" method="" action="">
-		Nom de la famille<input type="text" name="new_famille_nom">
-		<input type="submit" value="Enregistrer">
-	</form>
+    <header>
+		<div id="logo"></div>
+		<div id="titreHeader">
+			<div id="titreHeader-l1">Liste de courses</div>
+			<div id="titreHeader-l2">Projet New World</div>
+			<div id="titreHeader-l3">Les courses pour tous !</div>
+		</div>
+	</header>
+	<nav>
+		Accueil // BLABLA // BLABLA
+	</nav>
+	<div class="container">
+        <h1>Création d'une famille</h1>
+        <form name="connexion" method="" action="">
+            Nom de la famille<input type="text" name="new_famille_nom">
+            <input type="submit" value="Enregistrer">
+        </form>
+	</div>
 </body>
 </html>
