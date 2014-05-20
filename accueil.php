@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Accueil</title>
   <link rel="stylesheet" href="style/style.css">
+  <link rel="icon" type="image/ico" href="style/img/favicon.ico"/>
 </head>
 <body>
 	<header>
