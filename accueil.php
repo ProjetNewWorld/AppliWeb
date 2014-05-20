@@ -14,6 +14,9 @@
 			<div id="titreHeader-l3">Les courses pour tous !</div>
 		</div>
 	</header>
+	<nav>
+		Accueil // BLABLA // BLABLA
+	</nav>
 	<div class="container">
 		<h1>Accueil</h1>
 		<h2>Vous devez appartenir a une famille pour continuer</h2>
@@ -115,7 +118,7 @@
 		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		
+
 	</div>
 </body>
 </html>
