@@ -21,8 +21,8 @@ include("commun.php");
 	</header>
 	<div id="blocConnexion">
         <form id="formConnexion" name="fConnect" method="post" action="services.php">
-            <p><label for="id">Identifiant :</label><input type="text" name="user_identifiant"/></p>
-            <p><label for="id">Mot de Passe :</label><input type="password" name="user_pwd"/></p>
+            <p><label for="id">Identifiant :</label><input type="text" name="user_identifiant" required/></p>
+            <p><label for="id">Mot de Passe :</label><input type="password" name="user_pwd" required /></p>
             <a href="mdpOublie.php">Mot de passe oublié</a>
             <a href="inscription.php">S'inscrire</a>
             <input type="submit" name="connect" value="Connexion"/>
