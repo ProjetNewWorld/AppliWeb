@@ -55,7 +55,6 @@ header{
 }
 nav{
 	background-color: #000;
-	width: 100%;
 	text-transform: uppercase;
 	opacity: 0.9;
 	text-align: center;
@@ -91,4 +90,13 @@ h2{
 	margin: 0 auto;
 	position: relative;
 	text-align: justify;
+}
+footer{
+	margin-top: 30px;
+	text-align: center;
+	color: #FFF;
+	padding: 20px;
+	font-weight: 700;
+	line-height: 20px;
+	background-color: #000;
 }
