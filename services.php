@@ -136,20 +136,5 @@ if(isset($_POST['supprimerFamille']))
 	header('Location: accueil.php');
 }
 // FIN SUPPRIMER FAMILLE //
-// DEBUT REVOI INFO MAIL //
-if(isset($_POST['mdpOublie']))
-{
-	$pseudo=$_POST['inputPseudoOubli'];
-	echo $pseudo;
-	
-	$requette="select membreEmail from membre where membreLogin='$pseudo'";
-	$reponse=mysql_query($requette);
-	$ligne=mysql_fetch_array($reponse);
-	$mess=$ligne['membreLogin']." , votre mot de passe est "
-	if(mysql_num_rows($reponse)>0)
-	{
-		mail($ligne['membreEmail'],"Recupération de votre mot de passe",$mess,$headers); 
-	}
-}
-// FIN REVOI INFO MAIL //
+
 ?>
