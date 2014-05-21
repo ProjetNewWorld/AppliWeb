@@ -39,13 +39,13 @@ header{
 #logo{
 	margin-right: 20px;
 	top: 97px;
-	left: 5%;
+	left: 21%;
 	width: 100px;
 	height: 200px;
 	background-image: url("img/logoListeCourse.png");
 	float: left;
 	background-size: 100px;
-	position: absolute;
+	position: relative;
 	z-index: 1;
 	background-repeat: no-repeat;
 }
