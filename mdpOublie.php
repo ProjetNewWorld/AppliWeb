@@ -11,14 +11,7 @@ include('function.php'); ?>
   <script type="text/javascript" src="./script/renvoitMotDePasse.js"></script>
 </head>
 <body>
-    <header>
-		<div id="logo"></div>
-		<div id="titreHeader">
-			<div id="titreHeader-l1">Liste de courses</div>
-			<div id="titreHeader-l2">Projet New World</div>
-			<div id="titreHeader-l3">Les courses pour tous !</div>
-		</div>
-	</header>
+    <?php include("header.html") ?>
 	<nav>
 		Accueil // BLABLA // BLABLA
 	</nav>
