@@ -19,13 +19,10 @@
 	</nav>
 	<div class="container">
         <h1>Création d'une famille</h1>
-        <form name="ajoutFamille" method="POST" action="services.php">
-            Nom de la famille : <input type="text" name="new_famille_nom" />
-            <input type="submit"  name="ajouterFamille" />
+        <form name="connexion" method="" action="">
+            Nom de la famille<input type="text" name="new_famille_nom">
+            <input type="submit" value="Enregistrer">
         </form>
-
-		
-		
 	</div>
 </body>
 </html>

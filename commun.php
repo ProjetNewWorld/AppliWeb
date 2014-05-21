@@ -1,11 +1,15 @@
 <?php session_start();
-mysql_connect('localhost','root','');
-
-mysql_select_db('dblistecourses'); 
+$host="127.0.0.1"; //replace with database hostname 
+$username="userLDC"; //replace with database username 
+$password="passLDC"; //replace with database password 
+$db_name="listedescourses"; //replace with database name
+//echo $host." ".$username." ".$password;
+mysql_connect($host, $username, $password)or die("cannot connect"); 
+mysql_select_db("$db_name")or die("cannot select DB");
 $noListeEnCours=0;
 
 
-if($_SERVER['PHP_SELF']!="/AppliWeb/connexion.php")
+if($_SERVER['PHP_SELF']!="/appliWeb/connexion.php")
 {
 	if(empty($_SESSION['login']))
 	{
