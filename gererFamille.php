@@ -1,4 +1,6 @@
-<?php include('function.php'); ?>
+<?php
+$connexionPage=false;
+include('function.php'); ?>
 <!doctype html>
 <html lang="fr">
 <head>
