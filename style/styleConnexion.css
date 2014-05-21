@@ -55,7 +55,10 @@ header{
 .clear{
 	clear: both;
 }
-
+a{
+	color: #FFF;
+	text-decoration: none;
+}
 h1{
 	color: #000;
 	line-height: 65px;
@@ -113,4 +116,13 @@ h2{
 	margin-bottom: 10px;
 	margin-left: 10px;
 	color: white;
+}
+footer{
+	margin-top: 30px;
+	text-align: center;
+	color: #FFF;
+	padding: 20px;
+	font-weight: 700;
+	line-height: 20px;
+	background-color: #000;
 }

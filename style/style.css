@@ -64,6 +64,17 @@ nav{
 	font-size: 20px;
 	line-height: 20px;
 }
+nav a{
+	padding: 40px;
+}
+a{
+	color: #FFF;
+	text-decoration: none;
+}
+/* Ajout d'une classe active pour le menu */
+.active{
+	color:orange;
+}
 body{
 	background-color: #FFF;
 	font-family: "Open Sans", sans-serif;
@@ -72,11 +83,12 @@ body{
 	line-height: 1.75;
 }
 h1{
+	padding: 10px;
 	color: #000;
 	line-height: 65px;
 	text-align: center;
 	font-weight: 700;
-	font-size: 68px;
+	font-size: 60px;
 	line-height: 80px;
 	letter-spacing: -1px;
 }
