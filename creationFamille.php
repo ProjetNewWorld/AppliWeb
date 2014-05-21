@@ -6,19 +6,23 @@
 	<link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <?php include("header.html") ?>
+	<?php include("header.html") ?>
 	<nav>
-		Accueil // BLABLA // BLABLA
+		<a href="accueil.php">Accueil</a>
+		//
+		<a href="liste.php">Ma liste</a>
+		//
+		<a href="courses.php">Les courses</a>
+		//
+		<a href="profil.php">Mon compte</a>
 	</nav>
 	<div class="container">
-        <h1>Création d'une famille</h1>
-        <form name="ajoutFamille" method="POST" action="services.php">
-            Nom de la famille : <input type="text" name="new_famille_nom" />
-            <input type="submit"  name="ajouterFamille" />
-        </form>
-
-		
-		
+		<h1>Création d'une famille</h1>
+		<form name="ajoutFamille" method="POST" action="services.php">
+			Nom de la famille : <input type="text" name="new_famille_nom" />
+			<input type="submit" name="ajouterFamille" />
+		</form>
 	</div>
+	<?php include("footer.html") ?>
 </body>
 </html>

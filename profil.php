@@ -15,10 +15,17 @@ include ("function.php");
 <body>
     <?php include("header.html") ?>
 	<nav>
-		Accueil // BLABLA // BLABLA
-	</nav>
+    <a href="accueil.php">Accueil</a>
+    //
+    <a href="liste.php">Ma liste</a>
+    //
+    <a href="courses.php">Les courses</a>
+    //
+    <a href="profil.php">Mon compte</a>
+  </nav>
 	<div class="container">
 		<h1>Gérer mon profil</h1>
-    </div>
+  </div>
+  <?php include("footer.html") ?>
 </body>
 </html>

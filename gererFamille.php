@@ -11,32 +11,36 @@ include('function.php'); ?>
 <body>
     <?php include("header.html") ?>
 	<nav>
-		Accueil // BLABLA // BLABLA
+		<a href="accueil.php">Accueil</a>
+		//
+		<a href="liste.php">Ma liste</a>
+		//
+		<a href="courses.php">Les courses</a>
+		//
+		<a href="profil.php">Mon compte</a>
 	</nav>
 	<div class="container">
 		<h1>Gérer sa famille</h1>
-		
 		<?php
 		if(isChef())
 		{
 			?><h4>Liste des personnes de votre famille (chef) : </h4> 
 		
 			<form name="fSupprimerFamille" method="post" action="services.php">
-            <input type="submit" name="supprimerFamille" value="Supprimer cette famille"/>
+			<input type="submit" name="supprimerFamille" value="Supprimer cette famille"/>
 			</form>
 			<?php
 		}
 		else
 		{
 			?><h4>Liste des personnes de votre famille : </h4> 
-			
-			
 			<form name="fQuitFamille" method="post" action="services.php">
-            <input type="submit" name="quitFamille" value="Quitter cette famille"/>
+			<input type="submit" name="quitFamille" value="Quitter cette famille"/>
 			</form>
 			<?php
 		}
 		?>
-    </div>
+	</div>
+	<?php include("footer.html") ?>
 </body>
 </html>

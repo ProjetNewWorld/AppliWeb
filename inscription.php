@@ -11,9 +11,6 @@ include('commun.php');
 </head>
 <body>
     <?php include("header.html") ?>
-	<nav>
-		Accueil // BLABLA // BLABLA
-	</nav>
 	<div class="container">
         <h1>Inscription</h1>
         <form name="fInscription" method="post" action="services.php">
@@ -32,5 +29,6 @@ include('commun.php');
         }
         ?>
 	</div>
+    <?php include("footer.html") ?>
 </body>
 </html>
