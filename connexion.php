@@ -12,14 +12,7 @@ include("commun.php");
     <link rel="icon" type="image/ico" href="style/img/favicon.ico"/>
 </head>
 <body class="bodyConnexion">
-	<header>
-		<div id="logo"></div>
-		<div id="titreHeader">
-			<div id="titreHeader-l1">Liste de courses</div>
-			<div id="titreHeader-l2">Projet New World</div>
-			<div id="titreHeader-l3">Les courses pour tous !</div>
-		</div>
-	</header>
+	<?php include("header.html") ?>
 	<div id="blocConnexion">
         <form id="formConnexion" name="fConnect" method="post" action="services.php">
             <p><label for="id">Identifiant :</label><input type="text" name="user_identifiant" required/></p>
@@ -32,7 +25,7 @@ include("commun.php");
 	<?php
 	if(isset($_GET['isNotConnected']))
 	{
-		echo "<div id='error'>Login ou Mot de passe incorrect</div>";
+		echo "<div class='error'>Login ou Mot de passe incorrect</div>";
 	}
 	?>
 	<!-- FIN FORMULAIRE -->
