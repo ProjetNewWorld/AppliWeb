@@ -1,15 +1,16 @@
 <?php session_start();
-mysql_connect('localhost','root','');
+mysql_connect('127.0.0.1','userLDC','passLDC');
 
-mysql_select_db('dblistecourses'); 
+mysql_select_db('listedescourses'); 
 $noListeEnCours=0;
 
 
-if($_SERVER['PHP_SELF']!="/AppliWeb/connexion.php")
+if($connexionPage!=true)
 {
 	if(empty($_SESSION['login']))
 	{
 		header('Location: connexion.php');
 	}
 }
+$connexionPage=false;
 ?>

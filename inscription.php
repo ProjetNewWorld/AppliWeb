@@ -1,4 +1,8 @@
 <!doctype html>
+<?php
+$connexionPage=true;
+include('commun.php');
+?>
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
