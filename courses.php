@@ -19,7 +19,9 @@ include ("function.php");
 		//
 		<a href="liste.php">Ma liste</a>
 		//
-		<a href="courses.php">Les courses</a>
+		<a class="active" href="courses.php">Les courses</a>
+		//
+		<a href="gererFamille.php">Ma famille</a>
 		//
 		<a href="profil.php">Mon compte</a>
 	</nav>

@@ -17,6 +17,8 @@ include('function.php'); ?>
 		//
 		<a href="courses.php">Les courses</a>
 		//
+		<a class="active" href="gererFamille.php">Ma famille</a>
+		//
 		<a href="profil.php">Mon compte</a>
 	</nav>
 	<div class="container">

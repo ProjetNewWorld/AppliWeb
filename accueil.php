@@ -15,11 +15,13 @@ include ("function.php");
 <body>
 	<?php include("header.html") ?>
 	<nav>
-		<a href="accueil.php">Accueil</a>
+		<a class="active" href="accueil.php">Accueil</a>
 		//
 		<a href="liste.php">Ma liste</a>
 		//
 		<a href="courses.php">Les courses</a>
+		//
+		<a href="gererFamille.php">Ma famille</a>
 		//
 		<a href="profil.php">Mon compte</a>
 	</nav>

@@ -17,9 +17,11 @@ include ("function.php");
 	<nav>
 		<a href="accueil.php">Accueil</a>
 		//
-		<a href="liste.php">Ma liste</a>
+		<a class="active" href="liste.php">Ma liste</a>
 		//
 		<a href="courses.php">Les courses</a>
+		//
+		<a href="gererFamille.php">Ma famille</a>
 		//
 		<a href="profil.php">Mon compte</a>
 	</nav>

@@ -21,7 +21,9 @@ include ("function.php");
     //
     <a href="courses.php">Les courses</a>
     //
-    <a href="profil.php">Mon compte</a>
+    <a href="gererFamille.php">Ma famille</a>
+    //
+    <a class="active" href="profil.php">Mon compte</a>
   </nav>
 	<div class="container">
 		<h1>Gérer mon profil</h1>

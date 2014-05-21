@@ -14,6 +14,8 @@
 		//
 		<a href="courses.php">Les courses</a>
 		//
+		<a href="gererFamille.php">Ma famille</a>
+		//
 		<a href="profil.php">Mon compte</a>
 	</nav>
 	<div class="container">
