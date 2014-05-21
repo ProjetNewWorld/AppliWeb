@@ -1,4 +1,5 @@
 <?php
+$connexionPage=false;
 include("commun.php");
 /**
  *  @brief Fonction qui renvoie un tableau qui contient les infos sur un membre en fonction de son pseudo
