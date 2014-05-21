@@ -1,7 +1,7 @@
 <?php session_start();
 $host="127.0.0.1"; //replace with database hostname 
-$username="root"; //replace with database username 
-$password="230956"; //replace with database password 
+$username="userLDC"; //replace with database username 
+$password="passLDC"; //replace with database password 
 $db_name="listedescourses"; //replace with database name
 //echo $host." ".$username." ".$password;
 mysql_connect($host, $username, $password)or die("cannot connect"); 
