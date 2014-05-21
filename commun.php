@@ -1,7 +1,7 @@
 <?php session_start();
-mysql_connect('localhost','root','');
+mysql_connect('127.0.0.1','userLDC','passLDC');
 
-mysql_select_db('dblistecourses'); 
+mysql_select_db('listedescourses'); 
 $noListeEnCours=0;
 
 
