@@ -1,4 +1,5 @@
 <?php
+$connexionPage=true;
 // Connexion à la base de données
 include("commun.php");
 ?>
