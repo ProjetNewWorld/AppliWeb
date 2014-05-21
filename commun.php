@@ -5,11 +5,12 @@ mysql_select_db('listedescourses');
 $noListeEnCours=0;
 
 
-if($_SERVER['PHP_SELF']!="/AppliWeb/connexion.php")
+if($connexionPage!=true)
 {
 	if(empty($_SESSION['login']))
 	{
 		header('Location: connexion.php');
 	}
 }
+$connexionPage=false;
 ?>
