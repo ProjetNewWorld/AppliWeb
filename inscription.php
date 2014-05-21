@@ -1,6 +1,3 @@
-<?php
-$connexionPage=true;
-include("commun.php");?>
 <!doctype html>
 <html lang="fr">
 <head>
