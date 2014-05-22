@@ -14,7 +14,7 @@ $pseudo=$_POST['pseudo'];
 	}
 	else
 	{
-		echo "pas de membre correspondant";
+		echo "Pas de membre correspondant";
 	}
  
 

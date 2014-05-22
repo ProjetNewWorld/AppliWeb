@@ -91,6 +91,21 @@ a{
 .bodyConnexion{
 	background-color: #F2F2F2;
 }
+.error{
+	color: red !important;
+	text-align: center;
+	padding: 20px;
+}
+.info{
+	color: blue !important;
+	text-align: center;
+	padding: 20px;
+}
+.valide{
+	color: green !important;
+	text-align: center;
+	padding: 20px;
+}
 #logoConnexion{
 	float: left;
 	margin-left: 20%;
