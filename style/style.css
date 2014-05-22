@@ -68,7 +68,7 @@ nav{
 	line-height: 20px;
 }
 nav a{
-	padding: 40px;
+	padding: 25px;
 }
 /* Permet de remettre les floats a 0 */
 .clear{
@@ -96,15 +96,30 @@ a{
 	text-align: center;
 	padding: 20px;
 }
+.error:before{
+	content:url(img/error.png);
+}
+.error:after{
+	content:url(img/error.png);
+}
 .info{
 	color: blue !important;
 	text-align: center;
 	padding: 20px;
 }
+.info:before{
+	content:url(img/info.png);
+}
+.info:after{
+	content:url(img/info.png);
+}
 .valide{
 	color: green !important;
 	text-align: center;
 	padding: 20px;
+}
+.valide:before{
+	content:url(img/ok.png);
 }
 #logoConnexion{
 	float: left;
@@ -168,4 +183,7 @@ footer{
 	line-height: 20px;
 	background-color: #000;
 	opacity: 0.9;
+}
+::selection{
+	background-color: grey;
 }
