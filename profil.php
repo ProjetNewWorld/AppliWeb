@@ -66,12 +66,10 @@ include ("function.php");
 		<input type="submit" name="applyEdit" value="Appliquer les modifications"/>
     <input type="reset" name="cancelEdit" value="Annuler" onclick="self.location.href='profil.php';"/>
 	</form>	
-	<!--Bouton annuler (dans un second formulaire sinon nécéssite les champs "requis")-->
-
 	<?php
 		if(isset($_GET['errorPasswd']) && $_GET['errorPasswd']=="true")
 		{
-			echo "<div id='error'>Les nouveaux mots de passes ne correspondent pas</div>";
+			echo "<div class='error'>Les nouveaux mots de passes ne correspondent pas</div>";
 		}
 		if(isset($_GET['errorOldPasswd']) && $_GET['errorOldPasswd']=="true")
 		{
