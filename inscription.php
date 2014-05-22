@@ -23,12 +23,16 @@ include('commun.php');
             <label for="identifiant">Identifiant</label><input id="identifiant" type="text" name="new_user_login" required/>
             <label for="pass1">Mot de Passe</label><input id="pass1" type="password" name="new_user_pwd1"/>
             <label for="pass2">Retapez votre mot de passe</label><input id="pass2" type="password" name="new_user_pwd2" required/>
-            <input type="submit" name="inscription" value="Enregistrer"/>
+            <input type="submit" name="register" value="Enregistrer"/>
         </form>
         <?php
         if(isset($_GET['errorPasswd']))
         {
             echo "<div id='error'>Les mots de passes ne correspondent pas</div>";
+        }
+        if(isset($_GET['errorLogin']))
+        {
+            echo "<div id='error'>Désolé cet identifiant est déjà utilisé</div>";
         }
         ?>
 	</div>

@@ -34,8 +34,9 @@ if(isset($_POST['connect']))
 // FIN FORMULAIRE DE CONNEXION //
 
 // FORMULAIRE D'INSCRIPTION //
-if(isset($_POST['inscription']))
+if(isset($_POST['register']))
 {
+	echo "<script>alert(\"INSCRIPTION\")</script>";
 	$login=$_POST['new_user_login'];
 	$password=$_POST['new_user_pwd1'];
 	$password2=$_POST['new_user_pwd2'];
@@ -43,18 +44,31 @@ if(isset($_POST['inscription']))
 	$prenom=$_POST['new_user_prenom'];
 	$nom=$_POST['new_user_nom'];
 	$date=date("20y-m-d");
-	echo $password;
-	if($password==$password2)
+	//echo $password;
+
+	$reqVerif="select membreId from membre where membreLogin='$login'";
+	$verif=mysql_query($reqVerif);
+	//si l'identifiant existe déjà (si $verif retourne une valeur)
+	if($verif->fetch())
 	{
-		$req="insert into membre (membreNom,membrePrenom,membreLogin,membreMdp,membreEmail,dateCreation) values('$nom','$prenom','$login','$password','$mail','$date')";
-		//echo '<br>'.$req;
-		mysql_query($req);
-		header('Location: connexion.php');
-		
+		echo "<script>alert(\"LOGIN EXISTANT\")</script>";
+		header('Location: inscription.php?errorLogin');
 	}
 	else
 	{
-		header('Location: inscription.php?errorPasswd=true');
+		echo "<script>alert(\"LOGIN INEXISTANT\")</script>";
+		if($password==$password2)
+		{
+			$req="insert into membre (membreNom,membrePrenom,membreLogin,membreMdp,membreEmail,dateCreation) values('$nom','$prenom','$login','$password','$mail','$date')";
+			//echo '<br>'.$req;
+			mysql_query($req);
+			header('Location: connexion.php?newComer');
+			
+		}
+		else
+		{
+			header('Location: inscription.php?errorPasswd');
+		}
 	}
 }
 // FIN FORMULAIRE D'INSCRIPTION //

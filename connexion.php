@@ -29,6 +29,10 @@ include("commun.php");
 	{
 		echo "<div class='error'>Login ou Mot de passe incorrect</div>";
 	}
+		if(isset($_GET['newComer']))
+	{
+		echo "<div class='valide'>Votre inscription a été prit en compte</div>";
+	}
 	?>
 	<!-- FIN FORMULAIRE -->
 	<?php include("footer.html") ?>
