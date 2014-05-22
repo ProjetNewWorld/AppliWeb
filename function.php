@@ -8,16 +8,15 @@ include("commun.php");
  *  @param [in] $infoVoulue l'information voule (ex : membrePrenom)
  *  @return Tableau associatif qui contient les infos du membre
  *  
- *  @details Ex : getInfosMembreByLogin("carnaud","membrePrenom"] == cyril
+ *  @details Ex : getInfosMembreByLogin("carnaud","membrePrenom") == cyril
  */
-function getInfosMembreByLogin($infoVoulue) 
+function getInfosMembreByLogin($infoVoulue)
 {
 	$login=$_SESSION["login"];
 	$req="select * from membre where membreLogin='$login'";
 	$rep=mysql_query($req);
 	$monTableauInfoSurLeMembre=mysql_fetch_array($rep);
 	return $monTableauInfoSurLeMembre["$infoVoulue"];
-	
 }
 /**
  *  @brief Defini si un membre a une famille associé ou non

@@ -14,8 +14,6 @@ if(isset($_POST['disconnect']))
 //echo "<pre>";
 //print_r($_POST);
 //echo "</pre>";
-
-
 if(isset($_POST['connect']))
 {
 	$login=$_POST['user_identifiant'];
@@ -68,6 +66,45 @@ if(isset($_POST['inscription']))
 	}
 }
 // FIN FORMULAIRE D'INSCRIPTION //
+
+// MODIFICATION PROFIL //
+if(isset($_POST['applyEdit']))
+{
+	$name=$_POST['user_name'];
+	$firstname=$_POST['user_firstname'];
+	$mail=$_POST['user_mail'];
+	$password1=$_POST['new_user_pwd1'];
+	$password2=$_POST['new_user_pwd2'];
+	$password0=$_POST['old_user_pwd'];
+	$login=$_SESSION['login'];
+echo "<script>alert($login)</script>"; 
+	// si l'ancien mot de passe n'est pas le bon
+	if($password0!=getInfosMembreByLogin('membreMdp'))
+	{
+		header('Location: profil.php?edit=true&errorOldPasswd=true');
+	}
+	else
+	{
+		// si les champs du nouveau mot de passe correspondent
+		if($password1==$password2)
+		{
+			$req="update membre set membreNom='$name', membrePrenom='$firstname',membreMdp='$password1',membreEmail='$mail' where membreLogin='$login' and membreMdp='$password0'";
+			//echo '<br>'.$req;
+			mysql_query($req);
+			header('Location: profil.php');
+		}
+		else
+		{
+			header('Location: profil.php?edit=true&errorPasswd=true');
+		}
+	}
+}
+if(isset($_POST['cancelEdit']))
+{
+	header('Location: profil.php');
+}
+// FIN MODIFICATION PROFIL //
+
 //AJOUT D UNE FAMILE //
 if(isset($_POST['ajouterFamille'])) // quand on crée une famille
 {
@@ -136,5 +173,4 @@ if(isset($_POST['supprimerFamille']))
 	header('Location: accueil.php');
 }
 // FIN SUPPRIMER FAMILLE //
-
 ?>
