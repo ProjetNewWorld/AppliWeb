@@ -1,8 +1,8 @@
+<!doctype html>
 <?php 
 $connexionPage=false;
 include ("function.php");
 ?>
-<!doctype html>
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
