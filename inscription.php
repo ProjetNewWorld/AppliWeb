@@ -11,6 +11,9 @@ include('commun.php');
 </head>
 <body>
     <?php include("header.html") ?>
+    <nav>
+        <a href="connexion.php">Retour</a>
+    </nav>
 	<div class="container">
         <h1>Inscription</h1>
         <form name="fInscription" method="post" action="services.php">
