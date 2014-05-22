@@ -9,6 +9,7 @@ include('function.php'); ?>
 	<link rel="stylesheet" href="style/style.css">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	<script type="text/javascript" src="./script/gererFamille.js"></script>
+	<script type="text/javascript" src="./script/addMembreToFamille.js"></script>
 </head>
 <body>
     <?php include("header.html") ?>
@@ -28,7 +29,12 @@ include('function.php'); ?>
 		<?php
 		if(isChef())
 		{
-			?><h4>Liste des personnes de votre famille (chef) : </h4> 
+			?>
+			<h3>Ajouter un membre à ma famille : </h3> 
+			<input type="text" name="addMembreToFamille" id="pseudoAjouterALaFamille" placeholder='Pseudo du membre a ajouter' required/>
+			<input type="submit" id="ajouterALaFamille" value="Ajouter" />
+			<div id="repAjout"></div>
+			<h3>Liste des personnes de votre famille (chef) : </h3> 
 			<?php
 					$membreFamilleId=getInfosMembreByLogin("familleId"); // on recupere l id de la famille du membre
 					$requette="select * from membre where familleId=$membreFamilleId";
