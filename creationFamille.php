@@ -2,6 +2,12 @@
 <?php 
 $connexionPage=false;
 include ("function.php");
+if(membreHasFamille()!="false")// si le membre a une famille on le redirige
+{
+		header('Location: accueil.php');
+
+} 
+
 ?>
 <html lang="fr">
 <head>

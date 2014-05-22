@@ -3,6 +3,8 @@
 $connexionPage=true;
 // Connexion à la base de données
 include("commun.php");
+	session_unset();
+	session_destroy();
 ?>
 <html lang="fr">
 <head>
