@@ -15,13 +15,27 @@ include ("function.php");
 <body>
 	<?php include("header.html") ?>
 	<nav>
+		<?php
+		if(membreHasFamille()!="false")
+		{
+			?>
 		<a class="active" href="accueil.php">Accueil</a>
 		//
 		<a href="liste.php">Ma liste</a>
 		//
 		<a href="courses.php">Les courses</a>
 		//
+
 		<a href="gererFamille.php">Ma famille</a>
+			<?php
+		}
+		else
+		{
+			?>
+			<a href="creationFamille.php">Créer ma famille</a>
+			<?php
+		}
+		?>
 		//
 		<a href="profil.php">Mon compte</a>
 	</nav>

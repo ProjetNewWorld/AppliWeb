@@ -29,7 +29,11 @@ function membreHasFamille()
 {
 	if(getInfosMembreByLogin('familleId') !="")
 	{
-			return getInfosMembreByLogin('membreNom');
+			$familleId=getInfosMembreByLogin('familleId');
+			$requette="select familleLibelle from famille where familleId=$familleId";
+			$reponse=mysql_query($requette);
+			$ligne=mysql_fetch_array($reponse);
+			return $ligne['familleLibelle'];
 	}
 	else
 	{
