@@ -27,7 +27,6 @@ include('function.php'); ?>
 		if(isChef())
 		{
 			?><h4>Liste des personnes de votre famille (chef) : </h4> 
-		
 			<form name="fSupprimerFamille" method="post" action="services.php">
 			<input type="submit" name="supprimerFamille" value="Supprimer cette famille"/>
 			</form>
