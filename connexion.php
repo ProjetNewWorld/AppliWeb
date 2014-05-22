@@ -1,14 +1,14 @@
+<!doctype html>
 <?php
 $connexionPage=true;
 // Connexion à la base de données
 include("commun.php");
 ?>
-<!doctype html>
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
 	<title>Connexion</title>
-	<link rel="stylesheet" href="style/styleConnexion.css">
+	<link rel="stylesheet" href="style/style.css">
 	<link rel="icon" type="image/ico" href="style/img/favicon.ico"/>
 </head>
 <body class="bodyConnexion">
