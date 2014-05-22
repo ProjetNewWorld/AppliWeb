@@ -1,5 +1,5 @@
 <?php
-// Connexion à la base de données
+// Connexion ï¿½ la base de donnï¿½es
 include("function.php");
 // DECONNEXION //
 if(isset($_POST['disconnect']))
@@ -28,7 +28,7 @@ if(isset($_POST['connect']))
 	{
 		$ligne=mysql_fetch_assoc($result);
 		$monTableau['login'][]=$ligne;
-		// connexion à la variable session
+		// connexion ï¿½ la variable session
 		$_SESSION['login'] = $login;
 		header('Location: accueil.php');
 	}
@@ -88,6 +88,9 @@ echo "<script>alert($login)</script>";
 		// si les champs du nouveau mot de passe correspondent
 		if($password1==$password2)
 		{
+			if(empty($password1))
+			$req="update membre set membreNom='$name', membrePrenom='$firstname',membreEmail='$mail' where membreLogin='$login' and membreMdp='$password0'";
+			else
 			$req="update membre set membreNom='$name', membrePrenom='$firstname',membreMdp='$password1',membreEmail='$mail' where membreLogin='$login' and membreMdp='$password0'";
 			//echo '<br>'.$req;
 			mysql_query($req);
@@ -106,7 +109,7 @@ if(isset($_POST['cancelEdit']))
 // FIN MODIFICATION PROFIL //
 
 //AJOUT D UNE FAMILE //
-if(isset($_POST['ajouterFamille'])) // quand on crée une famille
+if(isset($_POST['ajouterFamille'])) // quand on crï¿½e une famille
 {
 	$nomFamille=$_POST["new_famille_nom"];
 	$idChef=getInfosMembreByLogin('membreId');
@@ -129,12 +132,12 @@ if(isset($_POST['ajouterFamille'])) // quand on crée une famille
 // DEBUT CHOIX ALLER DANS FAMILLE //
 if(isset($_POST['choixGoInFamille'])) // quand il repond a la demande d une famille
 {
-	$membreId=getInfosMembreByLogin("membreId"); // on recupere l id du membre connecté
+	$membreId=getInfosMembreByLogin("membreId"); // on recupere l id du membre connectï¿½
 	$requette1="select familleId from demande where membreId=$membreId";
 	$reponse1=mysql_query($requette1);
 	$ligne=mysql_fetch_array($reponse1); // on recupere l id de la famille qui a fait le demande
 	$familleId=$ligne['familleId'];	
-	if($_POST['choixGoInFamille']=="Accepter") // si il a accepté
+	if($_POST['choixGoInFamille']=="Accepter") // si il a acceptï¿½
 	{
 		$requette2="update membre set familleId=$familleId where membreId=$membreId"; // on lui affecte sa famille dans la bdd
 		$reponse2=mysql_query($requette2);
@@ -150,8 +153,8 @@ if(isset($_POST['choixGoInFamille'])) // quand il repond a la demande d une fami
 // DEBUT QUITTER FAMILLE MEMBRE NON CHEF //
 if(isset($_POST['quitFamille']))
 {
-	$membreId=getInfosMembreByLogin("membreId"); // on recupere l id du membre connecté
-	$req="update membre set familleId=null where membreId=$membreId"; // on lui enleve la famille essocié
+	$membreId=getInfosMembreByLogin("membreId"); // on recupere l id du membre connectï¿½
+	$req="update membre set familleId=null where membreId=$membreId"; // on lui enleve la famille essociï¿½
 	mysql_query($req);
 	header('Location: accueil.php');
 }
@@ -159,9 +162,9 @@ if(isset($_POST['quitFamille']))
 // DEBUT SUPPRIMER FAMILLE //
 if(isset($_POST['supprimerFamille']))
 {
-	$familleId=getInfosMembreByLogin("familleId"); // on recupere l id de la famille du membre connecté
+	$familleId=getInfosMembreByLogin("familleId"); // on recupere l id de la famille du membre connectï¿½
 	
-	$req="update membre set familleId=null where familleId=$familleId"; // on lui enleve la famille essocié
+	$req="update membre set familleId=null where familleId=$familleId"; // on lui enleve la famille essociï¿½
 	mysql_query($req);
 	$req2="delete from demande where familleId=$familleId"; // on supprime les demande qu aurait fait la famille
 	mysql_query($req2);
