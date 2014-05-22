@@ -23,6 +23,8 @@ if(membreHasFamille()!="false")// si le membre a une famille on le redirige
 		<a class="active" href="creationFamille.php">Créer ma famille</a>
 		//
 		<a href="profil.php">Mon compte</a>
+		//
+		<a href="connexion.php">Déconnexion</a>
 	</nav>
 	<div class="container">
 		<h1>Création d'une famille</h1>

@@ -24,6 +24,8 @@ include ("function.php");
 		<a href="gererFamille.php">Ma famille</a>
 		//
 		<a href="profil.php">Mon compte</a>
+		//
+		<a href="connexion.php">Déconnexion</a>
 	</nav>
 	<div class="container">
 		<h1>Ma liste de courses</h1>

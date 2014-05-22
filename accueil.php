@@ -37,6 +37,8 @@ include ("function.php");
 		?>
 		//
 		<a href="profil.php">Mon compte</a>
+		//
+		<a href="connexion.php">Déconnexion</a>
 	</nav>
 	<div class="container">
 		<h1>Accueil</h1>
@@ -49,7 +51,7 @@ include ("function.php");
 		{
 			if(demandFromFamille()!="Pas de demande") // si une demande a été faite
 			{
-				?><h3>La famille <?php echo demandFromFamille() ?>  a effectué une demande pour vous ajouter</h3>
+				?><div class="info">La famille <?php echo demandFromFamille() ?>  a effectué une demande pour vous ajouter</div>
 				<form name="fAccepterOrNotFamille" method="post" action="services.php">
 				<input type="submit" name="choixGoInFamille" value="Accepter"/>
 				<input type="submit" name="choixGoInFamille" value="Refuser"/>
@@ -59,15 +61,12 @@ include ("function.php");
 			else // si personne ne lui a pas demandé
 			{
 				?><p>Pas de demande d'ajout à une famille vous concernant</p>
-				<p>Vous devez appartenir a une famille pour continuer</p>
+				<div class="info">Vous devez appartenir a une famille pour continuer</div>
 				<p><a href="creationFamille.php">Créer une famille</a></p>
 				<p>Attendre une invitation dans une famille.</p>
 		<?php }
 		}
 		?>
-		<form name="fDisconnect" method="post" action="services.php">
-			<input type="submit" name="disconnect" value="Déconnexion"/>
-		</form>
 	</div>
 	<?php include("footer.html") ?>
 </body>

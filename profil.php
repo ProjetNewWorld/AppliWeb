@@ -39,6 +39,8 @@ include ("function.php");
     ?>
     //
     <a class="active" href="profil.php">Mon compte</a>
+    //
+    <a href="connexion.php">Déconnexion</a>
   </nav>
 	<div class="container">
 		<h1>Gérer mon profil</h1>
