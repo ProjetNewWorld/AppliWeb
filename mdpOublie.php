@@ -14,7 +14,7 @@ include('function.php'); ?>
 	<?php include("header.html") ?>
 	<div class="container">
 		<h1>Récupération du mot de passe</h1>
-		Donnez votre pseudo : <input type="text" id="inputPseudoOubli" placeholder="Votre pseudo ici"/>
+		<label for="inputPseudoOubli">Donnez votre pseudo :</label><input type="text" id="inputPseudoOubli" placeholder="Votre pseudo" required/>
 		<input type="submit" id="mdpOublie" value="Renvoyer mon mot de passe"/>
 		<div id="infoEnvoi" ></div>
 	</div>
