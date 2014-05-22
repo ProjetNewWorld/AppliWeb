@@ -17,11 +17,25 @@ include ("function.php");
 	<nav>
     <a href="accueil.php">Accueil</a>
     //
+    <?php
+    if(membreHasFamille()!="false")
+    {
+      ?>
     <a href="liste.php">Ma liste</a>
     //
     <a href="courses.php">Les courses</a>
     //
+
     <a href="gererFamille.php">Ma famille</a>
+      <?php
+    }
+    else
+    {
+      ?>
+      <a href="creationFamille.php">Créer ma famille</a>
+      <?php
+    }
+    ?>
     //
     <a class="active" href="profil.php">Mon compte</a>
   </nav>

@@ -1,8 +1,8 @@
+<!doctype html>
 <?php 
 $connexionPage=false;
 include ("function.php");
 ?>
-<!doctype html>
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
@@ -15,12 +15,12 @@ include ("function.php");
 <body>
 	<?php include("header.html") ?>
 	<nav>
+		<a class="active" href="accueil.php">Accueil</a>
+		//
 		<?php
 		if(membreHasFamille()!="false")
 		{
 			?>
-		<a class="active" href="accueil.php">Accueil</a>
-		//
 		<a href="liste.php">Ma liste</a>
 		//
 		<a href="courses.php">Les courses</a>
@@ -42,7 +42,6 @@ include ("function.php");
 	<div class="container">
 		<h1>Accueil</h1>
 		<?php
-
 		if(membreHasFamille()!="false") // si le membre a une famille
 		{
 			echo "<h2>Vous êtes dans la famille ".membreHasFamille()."</h2>";
@@ -50,8 +49,8 @@ include ("function.php");
 			{
 				?>
 				<h3>Ajouter un membre à la famille : </h3> 
-				<input type="text" name="addMembreToFamille" id="pseudoAjouterALaFamille" size='50' placeholder='Pseudo du membre a ajouter'/>
-				<input type="submit"  id="ajouterALaFamille" value="Ajouter" />
+				<input type="text" name="addMembreToFamille" id="pseudoAjouterALaFamille" placeholder='Pseudo du membre a ajouter' required/>
+				<input type="submit" id="ajouterALaFamille" value="Ajouter" />
 				<div id="repAjout"></div>
 				<?php
 			}
@@ -70,7 +69,6 @@ include ("function.php");
 			else // si personne ne lui a demandé
 			{
 				?><h3>Pas de demande d'ajout à une famille vous concernant</h3>
-		
 				<h2>Vous devez appartenir a une famille pour continuer</h2>
 				<p><a href="creationFamille.php">Créer une famille</a></p>
 				<p>Attendre une invitation dans une famille.</p>

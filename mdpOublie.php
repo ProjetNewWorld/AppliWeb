@@ -1,7 +1,7 @@
+<!doctype html>
 <?php
 $connexionPage=false;
 include('function.php'); ?>
-<!doctype html>
 <html lang="fr">
 <head>
 	<meta charset="utf-8"/>
@@ -12,9 +12,12 @@ include('function.php'); ?>
 </head>
 <body>
 	<?php include("header.html") ?>
+	<nav>
+        <a href="connexion.php">Retour</a>
+    </nav>
 	<div class="container">
 		<h1>Récupération du mot de passe</h1>
-		Donnez votre pseudo : <input type="text" id="inputPseudoOubli" placeholder="Votre pseudo ici"/>
+		<label for="inputPseudoOubli">Donnez votre pseudo :</label><input type="text" id="inputPseudoOubli" placeholder="Votre pseudo" required/>
 		<input type="submit" id="mdpOublie" value="Renvoyer mon mot de passe"/>
 		<div id="infoEnvoi" ></div>
 	</div>
