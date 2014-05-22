@@ -1,7 +1,6 @@
 $(document).ready(function() {
 	$('#ajouterALaFamille').click(function() {
 		var lePseudo=$('#pseudoAjouterALaFamille').val();
-		
 		if(lePseudo.length==0)
 		{
 			alert("Vous devez specifier le pseudo du membre a ajouter");
@@ -15,11 +14,11 @@ $(document).ready(function() {
 				if(data!="Demande envoy&eacutee")
 				{
 					
-					$("#repAjout").css('background','red');
+					$("#repAjout").css('color','red');
 				}
 				else
 				{
-					$("#repAjout").css('background','green');
+					$("#repAjout").css('color','green');
 				}
 			});
 		}
