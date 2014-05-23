@@ -50,12 +50,12 @@ if(isset($_POST['register']))
 	//si l'identifiant existe déjà (si $verif retourne une valeur)
 	if(mysql_num_rows($verif)>0)
 	{
-		echo "<script>alert(\"LOGIN EXISTANT\")</script>";
+		//echo "<script>alert(\"LOGIN EXISTANT\")</script>";
 		header('Location: inscription.php?errorLogin');
 	}
 	else
 	{
-		echo "<script>alert(\"LOGIN INEXISTANT\")</script>";
+		//echo "<script>alert(\"LOGIN INEXISTANT\")</script>";
 		if($password==$password2)
 		{
 			$req="insert into membre (membreNom,membrePrenom,membreLogin,membreMdp,membreEmail,dateCreation) values('$nom','$prenom','$login','$password','$mail','$date')";
