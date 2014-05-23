@@ -74,5 +74,15 @@ function demandFromFamille()
 	
 	
 }
+function getNoListe()
+{
+	$familleId=getInfosMembreByLogin('familleId');
+	$requette="select * from liste where familleId=$familleId and enCours=1";
+	$reponse=mysql_query($requette);
+	$ligne=mysql_fetch_array($reponse);
+	$listeId=$ligne['listeId'];
+	return $listeId; 
+}
+
 
 ?>
