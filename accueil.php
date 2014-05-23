@@ -48,7 +48,7 @@ include ("function.php");
 		<?php
 		if(membreHasFamille()!="false") // si le membre a une famille
 		{
-			echo "<h2>Vous êtes dans la famille ".membreHasFamille()."</h2>";
+			echo "<h2>Vous êtes dans la famille <span class='active'>".membreHasFamille()."</span></h2>";
 		}
 		else // si le membre n as pas de famille 
 		{

@@ -18,9 +18,9 @@ function getInfosMembreByLogin($infoVoulue)
 	return $monTableauInfoSurLeMembre["$infoVoulue"];
 }
 /**
- *  @brief Defini si un membre a une famille associé ou non
+ *  @brief Defini si un membre a une famille associÃ© ou non
  *  
- *  @return false si le membre n'a pas de famille associée , sinon on renvoie le nom de la famille
+ *  @return false si le membre n'a pas de famille associÃ©e , sinon on renvoie le nom de la famille
  *  
  */
 function membreHasFamille()
@@ -52,7 +52,7 @@ function isChef()
 	return mysql_num_rows($rep);
 }
 /**
- *  @brief Defini si une demande a été faite a un membre
+ *  @brief Defini si une demande a Ã©tÃ© faite a un membre
  *  
  *  @return "Pas de demande" si il n y en a pas , sinon on renvoi le nom de la famille
  *  

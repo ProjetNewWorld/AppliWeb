@@ -130,8 +130,7 @@ if(isset($_POST['ajouterFamille'])) // quand on crée une famille
 	
 	$requette3="update membre set familleId=$familleId where membreId=$idChef";
 	mysql_query($requette3);
-	header('Location: accueil.php');
-	
+	header('Location: accueil.php');	
 }
 // FIN AJOUT FAMILLE //
 // DEBUT CHOIX ALLER DANS FAMILLE //
