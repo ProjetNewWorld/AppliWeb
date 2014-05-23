@@ -130,6 +130,8 @@ if(isset($_POST['ajouterFamille'])) // quand on crée une famille
 	
 	$requette3="update membre set familleId=$familleId where membreId=$idChef";
 	mysql_query($requette3);
+	$requette4="INSERT INTO liste VALUES (NULL ,$familleId, 1)"; // on crée par defaut la liste en cours de la famille
+	mysql_query($requette4);
 	header('Location: accueil.php');	
 }
 // FIN AJOUT FAMILLE //
