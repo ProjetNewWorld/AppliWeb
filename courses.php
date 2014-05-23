@@ -1,7 +1,10 @@
 <!doctype html>
 <?php 
-$connexionPage=false;
 include ("function.php");
+	if(empty($_SESSION['login']))//si la varible session login est vide
+	{
+		header('Location: connexion.php');//redirection sur la page connexion.php
+	}
 ?>
 <html lang="fr">
 <head>

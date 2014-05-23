@@ -36,7 +36,6 @@ if(isset($_POST['connect']))
 // FORMULAIRE D'INSCRIPTION //
 if(isset($_POST['register']))
 {
-	echo "<script>alert(\"INSCRIPTION\")</script>";
 	$login=$_POST['new_user_login'];
 	$password=$_POST['new_user_pwd1'];
 	$password2=$_POST['new_user_pwd2'];
@@ -49,7 +48,7 @@ if(isset($_POST['register']))
 	$reqVerif="select membreId from membre where membreLogin='$login'";
 	$verif=mysql_query($reqVerif);
 	//si l'identifiant existe déjà (si $verif retourne une valeur)
-	if($verif->fetch())
+	if(mysql_num_rows($verif)>0)
 	{
 		echo "<script>alert(\"LOGIN EXISTANT\")</script>";
 		header('Location: inscription.php?errorLogin');

@@ -1,6 +1,5 @@
 <!doctype html>
 <?php
-$connexionPage=true;
 include('commun.php');
 ?>
 <html lang="fr">
@@ -28,11 +27,11 @@ include('commun.php');
         <?php
         if(isset($_GET['errorPasswd']))
         {
-            echo "<div id='error'>Les mots de passes ne correspondent pas</div>";
+            echo "<div class='error'>Les mots de passes ne correspondent pas</div>";
         }
         if(isset($_GET['errorLogin']))
         {
-            echo "<div id='error'>Désolé cet identifiant est déjà utilisé</div>";
+            echo "<div class='error'>Désolé cet identifiant est déjà utilisé</div>";
         }
         ?>
 	</div>

@@ -1,6 +1,5 @@
 <!doctype html>
 <?php
-$connexionPage=true;
 // Connexion à la base de données
 include("commun.php");
 	session_unset();

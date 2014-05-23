@@ -1,7 +1,10 @@
 <!doctype html>
 <?php 
-$connexionPage=false;
 include ("function.php");
+	if(empty($_SESSION['login']))//si la varible session login est vide
+	{
+		header('Location: connexion.php');//redirection sur la page connexion.php
+	}
 if(membreHasFamille()!="false")// si le membre a une famille on le redirige
 {
 		header('Location: accueil.php');

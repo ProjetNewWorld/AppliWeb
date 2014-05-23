@@ -13,12 +13,4 @@ mysql_connect($host,$user,$pass);
 mysql_select_db($db);
 //passage de la liste en cours à 0
 $noListeEnCours=0;
-if($connexionPage!=true)//si la variable page de connexion n'est pas à vrai
-{
-	if(empty($_SESSION['login']))//si la varibla session login est vide
-	{
-		header('Location: connexion.php');//redirection sur la page connexion.php
-	}
-}
-$connexionPage=false;
 ?>
