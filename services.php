@@ -182,4 +182,17 @@ if(isset($_POST['supprimerFamille']))
 	header('Location: accueil.php');
 }
 // FIN SUPPRIMER FAMILLE //
+if(isset($_POST['buttonAjouterListe']))
+{
+	$produit=$_POST['choixProduit'];
+	$qte=$_POST['qteAjouterListe'];
+	$listeId=getNoListe();
+	
+	$requette="insert into contenuliste values($listeId,$produit,$qte,0)";
+	mysql_query($requette);
+	
+	header('Location: liste.php');
+
+
+}
 ?>
