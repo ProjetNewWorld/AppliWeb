@@ -107,6 +107,8 @@ function creerListe()
 					$rayonActuel=$maLigne['rayonLib'];
 				}
 				echo $maLigne['produitLib']." | ";
+<<<<<<< HEAD
+=======
 
 				echo "<span id='qte".$maLigne['produitId']."'>".$maLigne['listeQte']."</span>";
 				?>
@@ -119,6 +121,18 @@ function creerListe()
 				<?php
 			}
 }
+>>>>>>> b00cd4ce38a488ce289e54eea4141e3c192eb636
 
+				echo "<span id='qte".$maLigne['produitId']."'>".$maLigne['listeQte']."</span>";
+				?>
+				<input type="hidden" id="<?php echo $maLigne['produitId'] ?>" value="<?php echo $maLigne['produitId'] ?>">
+				<button onclick="lessQte(<?php echo $maLigne['produitId']?>)">-</button>
+				
+				<button onclick="moreQte(<?php echo $maLigne['produitId']?>)">+</button>
+				<button onclick="deleteItem(<?php echo $maLigne['produitId']?>)">Supprimer de la liste</button>
+				</br>
+				<?php
+			}
+}
 
 ?>
