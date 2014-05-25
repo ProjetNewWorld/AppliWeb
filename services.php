@@ -132,7 +132,6 @@ if(isset($_POST['ajouterFamille'])) // quand on crée une famille
 	mysql_query($requette3);
 	$requette4="INSERT INTO liste VALUES (NULL ,$familleId, 1)"; // on crée par defaut la liste en cours de la famille
 	mysql_query($requette4);
-	
 	header('Location: accueil.php');	
 }
 // FIN AJOUT FAMILLE //
@@ -183,5 +182,17 @@ if(isset($_POST['supprimerFamille']))
 	header('Location: accueil.php');
 }
 // FIN SUPPRIMER FAMILLE //
+if(isset($_POST['buttonAjouterListe']))
+{
+	$produit=$_POST['choixProduit'];
+	$qte=$_POST['qteAjouterListe'];
+	$listeId=getNoListe();
+	
+	$requette="insert into contenuliste values($listeId,$produit,$qte,0)";
+	mysql_query($requette);
+	
+	header('Location: liste.php');
 
+
+}
 ?>

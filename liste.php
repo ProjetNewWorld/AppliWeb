@@ -13,9 +13,15 @@ include ("function.php");
 	<link rel="stylesheet" href="style/style.css">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	<script type="text/javascript" src="./script/gererListe.js"></script>
-	<script type="text/javascript" src="./script/gererQteAndDeleteItem.js"></script>
-	<script type="text/javascript" src="./script/ajoutProduit.js"></script>
-
+				<script>
+	
+				$(document).ready(function() {
+				$('#lessQte').click(function() {
+						//var produit="qte"+$(this).val();
+						alert($(this).attr("value"));
+					});
+				});
+			</script>
 
 	<link rel="icon" type="image/ico" href="style/img/favicon.ico"/>
 </head>
@@ -37,12 +43,8 @@ include ("function.php");
 	<div class="container">
 		<h1>Ma liste de courses</h1>
 		<h3>Ajouter un produit a la liste </h3>
-<<<<<<< HEAD
 		<form id="formAjoutListe" name="fAjoutListe" method="post" action="services.php">
 		<p>Choisissez le rayon : <select name="choixRayon" id="choixRayon"></p>
-=======
-		Choisissez le rayon : <select name="choixRayon" id="choixRayon">
->>>>>>> FETCH_HEAD
 		<?php
 			$IsPremierRayon=true;
 			$requette="select distinct rayonId , rayonLib from rayon natural join produit order by rayonLib";
@@ -67,24 +69,42 @@ include ("function.php");
 		?>
 		
 		</select>
-<<<<<<< HEAD
 		<p>Quantité : <input id="qte" type="text" value="1" name="qteAjouterListe" size="4"></p>
 		<p><button name="buttonAjouterListe" class="">Ajouter ce produit a la liste</button></p>
 		</form>
-=======
-		Quantité : <input type="text" value="1" id="qteAjouterListe" size="4">
-			<button id="buttonAjouterListe" class="">Ajouter ce produit a la liste</button>
->>>>>>> FETCH_HEAD
 		
 		
 	</br></br>	
-	
+	<div id="listeDesCourses">
 		<h3>Votre liste de courses : </h3></br>
-		<div id="listeDesCourses">
+		<form id="formModifListe" name="fAjoutListe" method="post" action="services.php">
 		<?php
-			creerListe();
+			$listeId=getNoListe();
+			$rayonActuel="";
+			$requette="select produitLib , rayonLib , listeQte from contenuliste natural join produit natural join rayon where listeId=$listeId order by rayonLib";
+			echo $requette;
+			$reponse=mysql_query($requette);
+			while($maLigne=mysql_fetch_array($reponse))
+			{
+				
+				if($maLigne['rayonLib']!=$rayonActuel)
+				{
+					echo "<h3>".$maLigne['rayonLib']."</h3>";
+					$rayonActuel=$maLigne['rayonLib'];
+				}
+				echo $maLigne['produitLib']." | ";
+				echo "<span id='qte".$maLigne['produitLib']."'>".$maLigne['listeQte']."</span>";
+				?>
+				<span id="lessQte" value="test">-</span>
+				<span id="moreQte">+</span>
+				<button id="modifierItemListe">Enregistrer</button>
+				<button id="supprimerItemListe">Supprimer de la liste</button>
+				</br>
+				<?php
+			}
 		
 		?>
+		</form>
 
 	</div>
 		
