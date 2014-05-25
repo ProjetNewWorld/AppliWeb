@@ -37,12 +37,9 @@ include ("function.php");
 	<div class="container">
 		<h1>Ma liste de courses</h1>
 		<h3>Ajouter un produit a la liste </h3>
-<<<<<<< HEAD
 		<form id="formAjoutListe" name="fAjoutListe" method="post" action="services.php">
 		<p>Choisissez le rayon : <select name="choixRayon" id="choixRayon"></p>
-=======
 		Choisissez le rayon : <select name="choixRayon" id="choixRayon">
->>>>>>> FETCH_HEAD
 		<?php
 			$IsPremierRayon=true;
 			$requette="select distinct rayonId , rayonLib from rayon natural join produit order by rayonLib";
@@ -67,15 +64,11 @@ include ("function.php");
 		?>
 		
 		</select>
-<<<<<<< HEAD
 		<p>Quantité : <input id="qte" type="text" value="1" name="qteAjouterListe" size="4"></p>
 		<p><button name="buttonAjouterListe" class="">Ajouter ce produit a la liste</button></p>
 		</form>
-=======
 		Quantité : <input type="text" value="1" id="qteAjouterListe" size="4">
 			<button id="buttonAjouterListe" class="">Ajouter ce produit a la liste</button>
->>>>>>> FETCH_HEAD
-		
 		
 	</br></br>	
 	
