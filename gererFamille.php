@@ -36,9 +36,11 @@ include('function.php');
 		if(isChef())
 		{
 			?>
-			<h3>Ajouter un membre à ma famille : </h3> 
-			<input type="text" name="addMembreToFamille" id="pseudoAjouterALaFamille" placeholder='Pseudo du membre a ajouter' required/>
-			<input type="submit" id="ajouterALaFamille" value="Ajouter" />
+			<h3>Ajouter un membre à ma famille : </h3>
+			<div class="milieu">
+				<p><input type="text" name="addMembreToFamille" id="pseudoAjouterALaFamille" placeholder='Pseudo du membre a ajouter' required/></p>
+				<p><input class="bouton" type="submit" id="ajouterALaFamille" value="Ajouter" /></p>
+			</div>
 			<div id="repAjout"></div>
 			<h3>Liste des personnes de votre famille (chef) : </h3> 
 			<?php
@@ -64,15 +66,15 @@ include('function.php');
 						{
 							echo $maLigne["membreNom"]." ".$maLigne["membrePrenom"]." , pseudo : ".$maLigne["membreLogin"] ; // sinon on affiche les infos et la possibilité de ban ou de promouvoir
 							?>
-							<button class="promouvoirMembre" value="<?php echo $maLigne["membreId"]?>">Promouvoir chef de famille</button>
-							<button class="banMembre" value="<?php echo $maLigne["membreId"]?>">Supprimer de la famille</button>
+							<button class="promouvoirMembre" value="<?php echo $maLigne["membreId"]?>"><img src="style/img/chef.png" alt="devenir chef" height="15"></button>
+							<button class="banMembre" value="<?php echo $maLigne["membreId"]?>"><img src="style/img/supprimer.png" alt="supprimer" height="15"></button>
 						<?php } ?>
 						</div>
 						<?php
 					}
 			?>
 			<form name="fSupprimerFamille" method="post" action="services.php">
-			<input type="submit" name="supprimerFamille" value="Supprimer cette famille"/>
+				<input class="bouton" type="submit" name="supprimerFamille" value="Supprimer cette famille"/>
 			</form>
 			<?php
 		}
@@ -102,7 +104,7 @@ include('function.php');
 					}
 			?>
 			<form name="fQuitFamille" method="post" action="services.php">
-			<input type="submit" name="quitFamille" value="Quitter cette famille"/>
+			<input class="bouton" type="submit" name="quitFamille" value="Quitter cette famille"/>
 			</form>
 			<?php
 		}

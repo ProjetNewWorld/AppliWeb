@@ -45,9 +45,8 @@ include ("function.php");
     //
     <a href="connexion.php">Déconnexion</a>
   </nav>
-	<div class="container">
-		<h1>Gérer mon profil</h1>
-		
+	<h1>Gérer mon profil</h1>
+	<div class="milieu profil">
 	<?php
 		$login=$_SESSION['login'];
 		$nom=getInfosMembreByLogin('membreNom');
@@ -68,8 +67,8 @@ include ("function.php");
 		<p><label for="pwd0">Ancien mot de passe </label><input id="pwd0" type="password" name="old_user_pwd" required/></p>
 		<p><label for="pwd1">Nouveau mot de passe </label><input id="pwd1" type="password" name="new_user_pwd1" required/></p>
 		<p><label for="pwd2">Retapez votre mot de passe </label><input id="pwd2" type="password" name="new_user_pwd2" required/></p>
-		<input type="submit" name="applyEdit" value="Appliquer les modifications"/>
-    <input type="reset" name="cancelEdit" value="Annuler" onclick="self.location.href='profil.php';"/>
+		<input class="bouton" type="submit" name="applyEdit" value="Appliquer les modifications"/>
+    <input class="bouton" type="reset" name="cancelEdit" value="Annuler" onclick="self.location.href='profil.php';"/>
 	</form>	
 	<?php
 		if(isset($_GET['errorPasswd']) && $_GET['errorPasswd']=="true")
@@ -89,7 +88,7 @@ include ("function.php");
 		<p>Prénom : <?php echo $prenom ?></p>
 		<p>E-mail : <?php echo $mail ?></p>
 		<p>Date d'inscription : <?php echo $creation ?></p>
-		<input type="submit" name="edit" value="Editer"/>
+		<input class="bouton" type="submit" name="edit" value="Editer"/>
 	</form>	
 	<?php
 	}
