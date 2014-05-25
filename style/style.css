@@ -1,3 +1,44 @@
+.milieu{
+	margin: auto;
+	width: 226px;
+}
+.profil{
+	width: 235px !important;
+}
+.boutonConnexion{
+	width: 100% !important;
+}
+.bouton{
+	width: 221px !important;
+}
+label{
+	width: 220px;
+	display: block;
+}
+select{
+	padding: 10px;
+}
+input{ 
+	margin-top: 5px;
+	margin-bottom: 20px;
+	padding: 10px 10px 10px 10px;
+	width: 200px;
+	border: 1px solid #CCC;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+	-webkit-box-shadow: 0 1px 1px #CCC inset, 0 1px 0 #FFF;
+	box-shadow: 0 1px 1px #CCC inset, 0 1px 0 #FFF;
+	background-color: #FFF;
+} 
+input:focus { 
+	border-color: #E8C291; 
+	outline: none; 
+	-moz-box-shadow: 0 0 0 1px #e8c291 inset; 
+	-webkit-box-shadow: 0 0 0 1px #E8C291 inset; 
+	box-shadow: 0 0 0 1px #E8C291 inset; 
+} 
 *{
 	padding: 0;
 	margin: 0;
@@ -20,6 +61,7 @@ body{
 	color: #737373;
 	font-size: 16px;
 	line-height: 1.75;
+	letter-spacing:0px;
 }
 #titreHeader{
 	padding-top: 30px;
@@ -78,6 +120,10 @@ nav a{
 .active{
 	color:orange;
 }
+/* centre un élément */
+.center{
+	text-align:center;
+}
 a{
 	color: #FFF;
 	text-decoration: none;
@@ -86,7 +132,7 @@ a{
 	width: 1100px;
 	margin: 0 auto;
 	position: relative;
-	text-align: justify;
+	text-align: center;
 }
 .bodyConnexion{
 	background-color: #F2F2F2;
@@ -145,10 +191,10 @@ a{
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+	line-height: 1.75;
 }
 #blocConnexion input{
-	margin-bottom: 10px;
-	width: 300px;
+	width: 277px;
 }
 #formConnexion label{
 	width: 110px;
@@ -174,6 +220,9 @@ h2{
 	line-height: 45px;
 	text-align: center;
 }
+h3{
+	text-align: center;
+}
 footer{
 	margin-top: 30px;
 	text-align: center;
@@ -185,5 +234,5 @@ footer{
 	opacity: 0.9;
 }
 ::selection{
-	background-color: grey;
+	background-color: gray;
 }
