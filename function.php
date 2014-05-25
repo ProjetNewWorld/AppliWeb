@@ -74,6 +74,10 @@ function demandFromFamille()
 	
 	
 }
+/**
+ * @brief permet d avoir l id de la liste en cours pour le membre actuellement connecté
+ * @return l'id de la liste en cours pour le membre actuellement connecté
+ */
 function getNoListe()
 {
 	$familleId=getInfosMembreByLogin('familleId');
@@ -83,6 +87,37 @@ function getNoListe()
 	$listeId=$ligne['listeId'];
 	return $listeId; 
 }
+/**
+ * @brief créer le code html qui affiche la liste en cours pour le membre connecté
+ * @details La fonction crée aussi des boutton - et + et supprimer qui sont géré en javascript dans le fichier gererQteAndDeleteItem.js
+ * @return rien mais on affiche le code html
+ */
+function creerListe()
+{
+	$listeId=getNoListe();
+	$rayonActuel="";
+	$requette="select produitLib , rayonLib , listeQte , produitId from contenuliste natural join produit natural join rayon where listeId=$listeId order by rayonLib";
+	$reponse=mysql_query($requette);
+	while($maLigne=mysql_fetch_array($reponse))
+	{
 
+		if($maLigne['rayonLib']!=$rayonActuel)
+		{
+			echo "<h3>".$maLigne['rayonLib']."</h3>";
+			$rayonActuel=$maLigne['rayonLib'];
+		}
+		echo $maLigne['produitLib']." | ";
+
+		echo "<span id='qte".$maLigne['produitId']."'>".$maLigne['listeQte']."</span>";
+		?>
+		<input type="hidden" id="<?php echo $maLigne['produitId'] ?>" value="<?php echo $maLigne['produitId'] ?>">
+		<button onclick="lessQte(<?php echo $maLigne['produitId']?>)">-</button>
+		
+		<button onclick="moreQte(<?php echo $maLigne['produitId']?>)">+</button>
+		<button onclick="deleteItem(<?php echo $maLigne['produitId']?>)">Supprimer de la liste</button>
+		</br>
+		<?php
+	}
+}
 
 ?>
