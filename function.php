@@ -107,8 +107,7 @@ function creerListe()
 					$rayonActuel=$maLigne['rayonLib'];
 				}
 				echo $maLigne['produitLib']." | ";
-<<<<<<< HEAD
-=======
+
 
 				echo "<span id='qte".$maLigne['produitId']."'>".$maLigne['listeQte']."</span>";
 				?>
@@ -121,7 +120,6 @@ function creerListe()
 				<?php
 			}
 }
->>>>>>> b00cd4ce38a488ce289e54eea4141e3c192eb636
 
 				echo "<span id='qte".$maLigne['produitId']."'>".$maLigne['listeQte']."</span>";
 				?>
