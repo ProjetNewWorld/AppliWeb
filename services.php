@@ -29,7 +29,7 @@ if(isset($_POST['connect']))
 		header('Location: connexion.php?isNotConnected=true');
 	}
 	echo json_encode($monTableau);
-
+	
 }
 // FIN FORMULAIRE DE CONNEXION //
 
@@ -62,7 +62,7 @@ if(isset($_POST['register']))
 			//echo '<br>'.$req;
 			mysql_query($req);
 			header('Location: connexion.php?newComer');
-
+			
 		}
 		else
 		{
@@ -124,15 +124,14 @@ if(isset($_POST['ajouterFamille'])) // quand on crée une famille
 	$reqAnnexe="select max(familleId) from famille"; 
 	$reponseAnnexe=mysql_query($reqAnnexe); 
 	$familleId=mysql_result($reponseAnnexe,0,"max(familleId)"); 
-
+	
 	$requette2="insert into cheffamille values ($familleId,$idChef)";
 	mysql_query($requette2);
-
+	
 	$requette3="update membre set familleId=$familleId where membreId=$idChef";
 	mysql_query($requette3);
 	$requette4="INSERT INTO liste VALUES (NULL ,$familleId, 1)"; // on crée par defaut la liste en cours de la famille
 	mysql_query($requette4);
-
 	header('Location: accueil.php');	
 }
 // FIN AJOUT FAMILLE //
@@ -153,7 +152,7 @@ if(isset($_POST['choixGoInFamille'])) // quand il repond a la demande d une fami
 	$requette3="delete from demande where familleId=$familleId and membreId=$membreId"; // on supprime la demande
 	echo $requette3;
 	mysql_query($requette3);
-
+	
 	header('Location: accueil.php');
 }
 // FIN CHOIX ALLER DANS FAMILLE //
@@ -170,7 +169,7 @@ if(isset($_POST['quitFamille']))
 if(isset($_POST['supprimerFamille']))
 {
 	$familleId=getInfosMembreByLogin("familleId"); // on recupere l id de la famille du membre connecté
-
+	
 	$req="update membre set familleId=null where familleId=$familleId"; // on lui enleve la famille associé
 	mysql_query($req);
 	$req2="delete from demande where familleId=$familleId"; // on supprime les demande qu aurait fait la famille
@@ -179,7 +178,7 @@ if(isset($_POST['supprimerFamille']))
 	mysql_query($req3);
 	$req4="delete from famille where familleId=$familleId"; // on supprime la famille
 	mysql_query($req4);
-
+	
 	header('Location: accueil.php');
 }
 // FIN SUPPRIMER FAMILLE //
@@ -193,5 +192,7 @@ if(isset($_POST['buttonAjouterListe']))
 	mysql_query($requette);
 	
 	header('Location: liste.php');
+
+
 }
 ?>

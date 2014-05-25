@@ -44,7 +44,8 @@ include ("function.php");
 		<h1>Ma liste de courses</h1>
 		<h3>Ajouter un produit a la liste </h3>
 		<form id="formAjoutListe" name="fAjoutListe" method="post" action="services.php">
-		<p>Choisissez le rayon : <select name="choixRayon" id="choixRayon"></p>
+
+		Choisissez le rayon : <select name="choixRayon" id="choixRayon">
 		<?php
 			$IsPremierRayon=true;
 			$requette="select distinct rayonId , rayonLib from rayon natural join produit order by rayonLib";
@@ -57,7 +58,7 @@ include ("function.php");
 			}
 		?>
 		</select>
-		<p>Choisissez le Produit : <select name="choixProduit" id="choixProduit"></p>
+		Choisissez le Produit : <select name="choixProduit" id="choixProduit">
 		<?php
 			$requette2="select * from produit where rayonId=$firstRayon order by  produitLib";
 			$reponse2=mysql_query($requette2);
@@ -69,8 +70,8 @@ include ("function.php");
 		?>
 		
 		</select>
-		<p>Quantité : <input id="qte" type="text" value="1" name="qteAjouterListe" size="4"></p>
-		<p><button name="buttonAjouterListe" class="">Ajouter ce produit a la liste</button></p>
+		Quantité : <input type="text" value="1" name="qteAjouterListe" size="4">
+			<button name="buttonAjouterListe" class="">Ajouter ce produit a la liste</button>
 		</form>
 		
 		

@@ -15,12 +15,10 @@ include('function.php');
 	<nav>
         <a href="connexion.php">Retour</a>
     </nav>
-	<h1>Récupération du mot de passe</h1>
-	<div class="milieu">
-		<form name="fInscription" method="post" action="">
-			<p><label for="inputPseudoOubli">Donnez votre pseudo :</label><input type="text" id="inputPseudoOubli" placeholder="Votre pseudo" required/></p>
-			<p><input class="bouton" type="submit" id="mdpOublie" value="Renvoyer mon mot de passe"/></p>
-		</form>
+	<div class="container">
+		<h1>Récupération du mot de passe</h1>
+		<label for="inputPseudoOubli">Donnez votre pseudo :</label><input type="text" id="inputPseudoOubli" placeholder="Votre pseudo" required/>
+		<input type="submit" id="mdpOublie" value="Renvoyer mon mot de passe"/>
 		<div id="infoEnvoi"></div>
 	</div>
 	<?php include("footer.html") ?>
