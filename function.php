@@ -121,16 +121,5 @@ function creerListe()
 			}
 }
 
-				echo "<span id='qte".$maLigne['produitId']."'>".$maLigne['listeQte']."</span>";
-				?>
-				<input type="hidden" id="<?php echo $maLigne['produitId'] ?>" value="<?php echo $maLigne['produitId'] ?>">
-				<button onclick="lessQte(<?php echo $maLigne['produitId']?>)">-</button>
-				
-				<button onclick="moreQte(<?php echo $maLigne['produitId']?>)">+</button>
-				<button onclick="deleteItem(<?php echo $maLigne['produitId']?>)">Supprimer de la liste</button>
-				</br>
-				<?php
-			}
-}
 
 ?>
