@@ -29,11 +29,14 @@ if(membreHasFamille()!="false")// si le membre a une famille on le redirige
 		//
 		<a href="connexion.php">Déconnexion</a>
 	</nav>
-	<div class="container">
-		<h1>Création d'une famille</h1>
+	<h1>Création d'une famille</h1>
+	<div class="milieu">
 		<form name="ajoutFamille" method="POST" action="services.php">
-			<label for="famille">Nom de la famille :</label><input id="famille" type="text" name="new_famille_nom" required/>
-			<input type="submit" name="ajouterFamille" />
+			<p>
+				<label for="famille">Nom de la famille :</p>
+				<input id="famille" type="text" placeholder="Nom de votre famille..." name="new_famille_nom" required/>
+			</p>
+			<p><input class="bouton" type="submit" name="ajouterFamille" /></p>
 		</form>
 	</div>
 	<?php include("footer.html") ?>
