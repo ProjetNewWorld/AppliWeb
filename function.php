@@ -1,3 +1,4 @@
+
 <?php
 include("commun.php");
 /**
@@ -121,5 +122,100 @@ function creerListe()
 			}
 }
 
+function afficherContenuListe()
+{
 
+			$listeId=getNoListe();
+			$rayonActuel="";
+			$requette="select produit.produitId, produitLib , rayonLib , listeQte from contenuliste natural join produit natural join rayon where listeId=$listeId and dansCaddy=0 order by rayonLib";
+			//echo $requette;
+			$reponse=mysql_query($requette);
+			$i=0;
+			while($maLigne=mysql_fetch_array($reponse))
+			{
+				if($maLigne['rayonLib']!=$rayonActuel)
+				{
+					echo "<h3>".$maLigne['rayonLib']."</h3>";
+					$rayonActuel=$maLigne['rayonLib'];
+				}
+				echo $maLigne['produitLib']." | ";
+				echo "<span id='qte".$maLigne['produitLib']."'>".$maLigne['listeQte']."</span>";
+				?>
+				<input type="hidden" id="<?php echo "prod".$i ?>" value="<?php echo $maLigne['produitId'] ?>" />
+				<input type="checkbox" id= "<?php echo "item".$i ?>"/>
+				<button id="<?php echo "reportItem".$i ?>">Reporter</button>
+				</br>
+				<?php
+				$i++;
+			}
+			
+		?>
+		<input type="hidden" id="i" value=<?php echo $i ?> />
+		<?php
+		if($i>0)
+		{
+		?>
+			<button id="addSelectedItems">Ajouter la sélection au panier</button>
+		<?php
+		}
+		else
+		{
+			echo "Votre liste est vide.";
+		}
+}
+
+function afficherContenuPanier()
+{
+		$listeId=getNoListe();
+		$rayonActuel2="";
+		$requette2="select produit.produitId, produitLib , rayonLib , listeQte from contenuliste natural join produit natural join rayon where listeId=$listeId and dansCaddy=1 order by rayonLib";
+		$reponse2=mysql_query($requette2);
+					$j=0;
+			while($maLigne2=mysql_fetch_array($reponse2))
+			{
+				if($maLigne2['rayonLib']!=$rayonActuel2)
+				{
+					echo "<h3>".$maLigne2['rayonLib']."</h3>";
+					$rayonActuel2=$maLigne2['rayonLib'];
+				}
+				echo $maLigne2['produitLib']." | ";
+				echo "<span id='qte".$maLigne2['produitLib']."'>".$maLigne2['listeQte']."</span>";
+				?>
+				<button class="cancelItem" value="<?php echo $maLigne2['produitId'] ?>">Reposer</button>
+				</br>
+				<?php
+				$j++;
+			}
+			if($j==0)
+			{
+				echo "Votre panier est vide.";				
+			}
+}
+function afficherContenu()
+{
+	?>
+		<h1>Ma liste</h1>
+		<div id="liste">
+		<?php
+		afficherContenuListe();
+		?>
+		</div>
+		<div id="panier">
+		<h1>Mon panier</h1>
+		<?php
+		afficherContenuPanier();
+		?>
+		</div>
+		<?php
+}
+
+function cancelItem($produitId)
+{
+	echo "<script>alert(\"hey\")</script>";
+	echo "<script>alert(\"$produitId\")</script>";
+/*	$listeId=getNoListe();
+	$requette="update contenuliste set dansCaddy=0 where listeId=$listeId and produitId=$produitId";
+	mysql_query($requette);
+	afficherContenu();*/
+}
 ?>
