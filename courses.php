@@ -9,7 +9,7 @@ include ("function.php");
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title>Accueil</title>
+	<title>Les courses</title>
 	<link rel="stylesheet" href="style/style.css">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	<script type="text/javascript" src="./script/ajouterSelectionAuPanier.js"></script>
