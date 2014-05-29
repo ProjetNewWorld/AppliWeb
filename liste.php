@@ -9,7 +9,7 @@ include ("function.php");
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title>Accueil</title>
+	<title>Ma liste</title>
 	<link rel="stylesheet" href="style/style.css">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	<script type="text/javascript" src="./script/gererListe.js"></script>
@@ -67,9 +67,6 @@ include ("function.php");
 		<p>Quantité : <input id="qte" type="text" value="1" name="qteAjouterListe" size="4"></p>
 		<p><button name="buttonAjouterListe" class="">Ajouter ce produit a la liste</button></p>
 		</form>
-		Quantité : <input type="text" value="1" id="qteAjouterListe" size="4">
-			<button id="buttonAjouterListe" class="">Ajouter ce produit a la liste</button>
-		
 	</br></br>	
 	
 		<h3>Votre liste de courses : </h3></br>
