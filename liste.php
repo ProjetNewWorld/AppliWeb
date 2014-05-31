@@ -43,6 +43,7 @@ include ("function.php");
 		<?php
 			$IsPremierRayon=true;
 			$requette="select distinct rayonId , rayonLib from rayon natural join produit order by rayonLib";
+			//echo $requette;
 			$reponse=mysql_query($requette);
 			while($maLigne=mysql_fetch_array($reponse))
 			{

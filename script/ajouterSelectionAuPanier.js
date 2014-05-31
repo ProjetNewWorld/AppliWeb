@@ -16,11 +16,17 @@ $(document).ready(function() {
 				produit[liste]=$(prod).val();
 				//alert(produit[liste]);
 			}
-		}		
-
-		$.post("script/ajax/ajouterAuPanier.php", { prod: produit }).done(function( data ) {
+		}	
+		if(produit.length!=0)
+		{
+			$.post("script/ajax/ajouterAuPanier.php", { prod: produit }).done(function( data ) {
 				$("#contenu").html(data).hide().fadeIn(400);
 			});
+		}
+		else
+		{
+			alert("Selectionnez au moins 1 produit.");
+		}
 	 });
 
 	$('.cancelItem').click(function() {
