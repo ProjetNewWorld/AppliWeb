@@ -43,7 +43,7 @@ include ("function.php");
 		//
 		<a href="connexion.php">Déconnexion</a>
 	</nav>
-	<div class="container">
+	<div class="center">
 		<h1>Accueil</h1>
 		<?php
 		if(membreHasFamille()!="false") // si le membre a une famille
