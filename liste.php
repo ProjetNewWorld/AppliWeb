@@ -34,51 +34,49 @@ include ("function.php");
 		//
 		<a href="connexion.php">Déconnexion</a>
 	</nav>
-	<div class="container">
 		<h1>Ma liste de courses</h1>
-		<h3>Ajouter un produit a la liste </h3>
-		<form id="formAjoutListe" name="fAjoutListe" method="post" action="services.php">
-		<p>Choisissez le rayon : <select name="choixRayon" id="choixRayon"></p>
-		Choisissez le rayon : <select name="choixRayon" id="choixRayon">
-		<?php
-			$IsPremierRayon=true;
-			$requette="select distinct rayonId , rayonLib from rayon natural join produit order by rayonLib";
-			//echo $requette;
-			$reponse=mysql_query($requette);
-			while($maLigne=mysql_fetch_array($reponse))
-			{
-				if($IsPremierRayon) { $firstRayon=$maLigne['rayonId']; $IsPremierRayon=false;}
-				?><option value="<?php echo $maLigne['rayonId'] ?>"> <?php echo $maLigne['rayonLib'] ?></option>
-				<?php
-			}
-		?>
-		</select>
-		<p>Choisissez le Produit : <select name="choixProduit" id="choixProduit"></p>
-		<?php
-			$requette2="select * from produit where rayonId=$firstRayon order by  produitLib";
-			$reponse2=mysql_query($requette2);
-			while($maLigne2=mysql_fetch_array($reponse2))
-			{
-				?><option value="<?php echo $maLigne2['produitId'] ?>"> <?php echo $maLigne2['produitLib'] ?></option>
-				<?php
-			}
-		?>
-		
-		</select>
-		<p>Quantité : <input id="qte" type="text" value="1" name="qteAjouterListe" size="4"></p>
-		<p><button name="buttonAjouterListe" class="">Ajouter ce produit a la liste</button></p>
-		</form>
-	</br></br>	
-	
-		<h3>Votre liste de courses : </h3></br>
+		<h2>Ajouter un produit a la liste </h2>
+		<br>
+		<div class="milieu">
+			<form id="formAjoutListe" name="fAjoutListe" method="post" action="services.php">
+			<p>Choisissez le rayon : <select name="choixRayon" id="choixRayon"></p>
+			Choisissez le rayon : <select name="choixRayon" id="choixRayon">
+			<?php
+				$IsPremierRayon=true;
+				$requette="select distinct rayonId , rayonLib from rayon natural join produit order by rayonLib";
+				//echo $requette;
+				$reponse=mysql_query($requette);
+				while($maLigne=mysql_fetch_array($reponse))
+				{
+					if($IsPremierRayon) { $firstRayon=$maLigne['rayonId']; $IsPremierRayon=false;}
+					?><option value="<?php echo $maLigne['rayonId'] ?>"> <?php echo $maLigne['rayonLib'] ?></option>
+					<?php
+				}
+			?>
+			</select>
+			<p>Choisissez le Produit : <select name="choixProduit" id="choixProduit"></p>
+			<?php
+				$requette2="select * from produit where rayonId=$firstRayon order by  produitLib";
+				$reponse2=mysql_query($requette2);
+				while($maLigne2=mysql_fetch_array($reponse2))
+				{
+					?><option value="<?php echo $maLigne2['produitId'] ?>"> <?php echo $maLigne2['produitLib'] ?></option>
+					<?php
+				}
+			?>
+			</select>
+			<p>Quantité : <input id="qte" type="text" value="1" name="qteAjouterListe" size="4"></p>
+			<p><button name="buttonAjouterListe" class="bouton">Ajouter ce produit a la liste</button></p>
+			</form>
+		</div>
+		<br>
+		<h2>Votre liste de courses : </h2></br>
 		<div id="listeDesCourses">
-		<?php
-			creerListe();
-		
-		?>
-
-	</div>
-		
+			<?php
+				creerListe();
+			
+			?>
+		</div>
 	</div>
 	<?php include("footer.html") ?>
 </body>

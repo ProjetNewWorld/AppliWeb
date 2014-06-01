@@ -95,115 +95,122 @@ function getNoListe()
  */
 function creerListe()
 {
-			$listeId=getNoListe();
-			$rayonActuel="";
-			$requette="select produitLib , rayonLib , listeQte , produitId from contenuliste natural join produit natural join rayon where listeId=$listeId order by rayonLib";
-			$reponse=mysql_query($requette);
-			while($maLigne=mysql_fetch_array($reponse))
-			{
-				
-				if($maLigne['rayonLib']!=$rayonActuel)
-				{
-					echo "<h3>".$maLigne['rayonLib']."</h3>";
-					$rayonActuel=$maLigne['rayonLib'];
-				}
-				echo $maLigne['produitLib']." | ";
-
-
-				echo "<span id='qte".$maLigne['produitId']."'>".$maLigne['listeQte']."</span>";
-				?>
-				<input type="hidden" id="<?php echo $maLigne['produitId'] ?>" value="<?php echo $maLigne['produitId'] ?>">
-				<button onclick="lessQte(<?php echo $maLigne['produitId']?>)">-</button>
-				
-				<button onclick="moreQte(<?php echo $maLigne['produitId']?>)">+</button>
-				<button onclick="deleteItem(<?php echo $maLigne['produitId']?>)">Supprimer de la liste</button>
-				</br>
-				<?php
-			}
+	$listeId=getNoListe();
+	$rayonActuel="";
+	$requette="select produitLib , rayonLib , listeQte , produitId from contenuliste natural join produit natural join rayon where listeId=$listeId order by rayonLib";
+	$reponse=mysql_query($requette);
+	echo "<div class='center'>";
+	while($maLigne=mysql_fetch_array($reponse))
+	{
+		if($maLigne['rayonLib']!=$rayonActuel)
+		{
+			echo "<hr>";
+			echo "<h3>".$maLigne['rayonLib']."</h3>";
+			$rayonActuel=$maLigne['rayonLib'];
+			
+		}
+		echo $maLigne['produitLib']." | ";
+		echo "<span class='active' id='qte".$maLigne['produitId']."'>".$maLigne['listeQte']."</span>";
+		?>
+		<input type="hidden" id="<?php echo $maLigne['produitId'] ?>" value="<?php echo $maLigne['produitId'] ?>">
+		<button onclick="lessQte(<?php echo $maLigne['produitId']?>)"><img src="style/img/moins.png"></button>
+		
+		<button onclick="moreQte(<?php echo $maLigne['produitId']?>)"><img src="style/img/plus.png"></button>
+		<button onclick="deleteItem(<?php echo $maLigne['produitId']?>)">Supprimer de la liste</button>
+		</br>
+		<?php
+	}
+	echo "</div>";
 }
 
 function afficherContenuListe()
 {
-
-			$listeId=getNoListe();
-			$rayonActuel="";
-			$requette="select produit.produitId, produitLib , rayonLib , listeQte from contenuliste natural join produit natural join rayon where listeId=$listeId and dansCaddy=0 order by rayonLib";
-			//echo $requette;
-			$reponse=mysql_query($requette);
-			$i=0;
-			while($maLigne=mysql_fetch_array($reponse))
-			{
-				if($maLigne['rayonLib']!=$rayonActuel)
-				{
-					echo "<h3>".$maLigne['rayonLib']."</h3>";
-					$rayonActuel=$maLigne['rayonLib'];
-				}
-				echo $maLigne['produitLib']." | ";
-				echo "<span id='qte".$maLigne['produitLib']."'>".$maLigne['listeQte']."</span>";
-				?>
-				<input type="hidden" id="<?php echo "prod".$i ?>" value="<?php echo $maLigne['produitId'] ?>" />
-				<input type="checkbox" id= "<?php echo "item".$i ?>"/>
-				<button id="<?php echo "reportItem".$i ?>">Reporter</button>
-				</br>
-				<?php
-				$i++;
-			}
-			
-		?>
-		<input type="hidden" id="i" value=<?php echo $i ?> />
-		<?php
-		if($i>0)
+	$listeId=getNoListe();
+	$rayonActuel="";
+	$requette="select produit.produitId, produitLib , rayonLib , listeQte from contenuliste natural join produit natural join rayon where listeId=$listeId and dansCaddy=0 order by rayonLib";
+	//echo $requette;
+	$reponse=mysql_query($requette);
+	$i=0;
+	echo "<div class='center'>";
+	while($maLigne=mysql_fetch_array($reponse))
+	{
+		if($maLigne['rayonLib']!=$rayonActuel)
 		{
+			echo "<hr>";
+			echo "<h3>".$maLigne['rayonLib']."</h3>";
+			$rayonActuel=$maLigne['rayonLib'];
+		}
+		echo $maLigne['produitLib']." | ";
+		echo "<span id='qte".$maLigne['produitLib']."'>".$maLigne['listeQte']."</span>";
 		?>
-			<button id="addSelectedItems">Ajouter la sélection au panier</button>
+		<input type="hidden" id="<?php echo "prod".$i ?>" value="<?php echo $maLigne['produitId'] ?>" />
+		<input type="checkbox" id= "<?php echo "item".$i ?>"/>
+		<button id="<?php echo "reportItem".$i ?>">Reporter</button>
+		</br>
 		<?php
-		}
-		else
-		{
-			echo "Votre liste est vide.";
-		}
+		$i++;
+	}
+	?>
+	<input type="hidden" id="i" value=<?php echo $i ?> />
+	<?php
+	if($i>0)
+	{
+	?>
+		<hr>
+		<button id="addSelectedItems">Ajouter la sélection au panier</button>
+	<?php
+	}
+	else
+	{
+		echo "Votre liste est vide.";
+	}
+	echo "</div>";
 }
 
 function afficherContenuPanier()
 {
-		$listeId=getNoListe();
-		$rayonActuel2="";
-		$requette2="select produit.produitId, produitLib , rayonLib , listeQte from contenuliste natural join produit natural join rayon where listeId=$listeId and dansCaddy=1 order by rayonLib";
-		$reponse2=mysql_query($requette2);
-					$j=0;
-			while($maLigne2=mysql_fetch_array($reponse2))
-			{
-				if($maLigne2['rayonLib']!=$rayonActuel2)
-				{
-					echo "<h3>".$maLigne2['rayonLib']."</h3>";
-					$rayonActuel2=$maLigne2['rayonLib'];
-				}
-				echo $maLigne2['produitLib']." | ";
-				echo "<span id='qte".$maLigne2['produitLib']."'>".$maLigne2['listeQte']."</span>";
-				?>
-				<button class="cancelItem" value="<?php echo $maLigne2['produitId'] ?>">Reposer</button>
-				</br>
-				<?php
-				$j++;
-			}
-			if($j==0)
-			{
-				echo "Votre panier est vide.";				
-			}
+	$listeId=getNoListe();
+	$rayonActuel2="";
+	$requette2="select produit.produitId, produitLib , rayonLib , listeQte from contenuliste natural join produit natural join rayon where listeId=$listeId and dansCaddy=1 order by rayonLib";
+	$reponse2=mysql_query($requette2);
+	$j=0;
+	echo "<div class='center'>";
+	while($maLigne2=mysql_fetch_array($reponse2))
+	{
+		if($maLigne2['rayonLib']!=$rayonActuel2)
+		{
+			echo "<h3>".$maLigne2['rayonLib']."</h3>";
+			$rayonActuel2=$maLigne2['rayonLib'];
+		}
+		echo $maLigne2['produitLib']." | ";
+		echo "<span id='qte".$maLigne2['produitLib']."'>".$maLigne2['listeQte']."</span>";
+		?>
+		<button class="cancelItem" value="<?php echo $maLigne2['produitId'] ?>">Reposer</button>
+		</br>
+		<?php
+		$j++;
+	}
+	if($j==0)
+	{
+		echo "Votre panier est vide.";				
+	}
+	echo "</div>";
 }
 function afficherContenu()
 {
 	?>
-		<h1>Ma liste</h1>
+		<h2>Ma liste</h2>
 		<div id="liste">
 		<?php
-		afficherContenuListe();
+			afficherContenuListe();
 		?>
 		</div>
+		<br>
 		<div id="panier">
-		<h1>Mon panier</h1>
+		<h2>Mon panier</h2>
+		<br>
 		<?php
-		afficherContenuPanier();
+			afficherContenuPanier();
 		?>
 		</div>
 		<?php

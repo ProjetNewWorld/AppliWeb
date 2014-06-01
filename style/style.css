@@ -1,16 +1,26 @@
-.milieu{
-	margin: auto;
-	width: 226px;
+button{
+	background: transparent;
+	border-radius: 5px;
+	border: 1px solid #CCC;
+	height: 35px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
-.profil{
-	width: 235px !important;
+button:focus { 
+	border-color: #E8C291; 
+	outline: none; 
+	-moz-box-shadow: 0 0 0 1px #e8c291 inset; 
+	-webkit-box-shadow: 0 0 0 1px #E8C291 inset; 
+	box-shadow: 0 0 0 1px #E8C291 inset; 
+} 
+select{
+	background: transparent;
+	width: 222px;
+	font-size: 16px;
+	line-height: 1;
+	height: 34px;
 }
-.boutonConnexion{
-	width: 100% !important;
-}
-.bouton{
-	width: 221px !important;
-}
+
 label{
 	width: 220px;
 	display: block;
@@ -62,6 +72,9 @@ body{
 	font-size: 16px;
 	line-height: 1.75;
 	letter-spacing:0px;
+}
+hr{
+	margin: 20px 50px 20px 50px;
 }
 #titreHeader{
 	padding-top: 30px;
@@ -167,6 +180,22 @@ a{
 .valide:before{
 	content:url(img/ok.png);
 }
+.valide:after{
+	content:url(img/ok.png);
+}
+.milieu{
+	margin: auto;
+	width: 226px;
+}
+.profil{
+	width: 235px !important;
+}
+.boutonConnexion{
+	width: 100% !important;
+}
+.bouton{
+	width: 221px !important;
+}
 #logoConnexion{
 	float: left;
 	margin-left: 20%;
@@ -216,12 +245,21 @@ h1{
 	letter-spacing: -1px;
 }
 h2{
-	color: #000;
-	line-height: 45px;
+	font-size: 35px;
+	color: #FFF;
+	background-color: #000;
 	text-align: center;
+	opacity: 0.9;
 }
 h3{
+	font-size: 25px;
+	color: #000;
+	text-decoration: underline;
 	text-align: center;
+}
+h4{
+	text-align: center;
+	text-decoration: underline;
 }
 footer{
 	margin-top: 30px;
@@ -234,5 +272,5 @@ footer{
 	opacity: 0.9;
 }
 ::selection{
-	background-color: gray;
+	background-color: orange;
 }

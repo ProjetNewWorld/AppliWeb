@@ -31,12 +31,11 @@ include ("function.php");
 		//
 		<a href="connexion.php">Déconnexion</a>
 	</nav>
-	<div class="container">
-		<div id="contenu">
+	<h1>Faire les courses</h1>
+	<div id="contenu">
 		<?php
-		afficherContenu();
+			afficherContenu();
 		?>
-		</div>
 	</div>
 	<?php include("footer.html") ?>
 </body>
