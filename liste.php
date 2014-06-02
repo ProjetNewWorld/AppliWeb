@@ -39,21 +39,25 @@ include ("function.php");
 		<br>
 		<div class="milieu">
 			<form id="formAjoutListe" name="fAjoutListe" method="post" action="services.php">
-			<p>Choisissez le rayon : <select name="choixRayon" id="choixRayon"></p>
 			Choisissez le rayon : <select name="choixRayon" id="choixRayon">
 			<?php
 				$IsPremierRayon=true;
 				$requette="select distinct rayonId , rayonLib from rayon natural join produit order by rayonLib";
-				//echo $requette;
+
+				$test=0;
+
 				$reponse=mysql_query($requette);
 				while($maLigne=mysql_fetch_array($reponse))
 				{
+					$test++;
 					if($IsPremierRayon) { $firstRayon=$maLigne['rayonId']; $IsPremierRayon=false;}
 					?><option value="<?php echo $maLigne['rayonId'] ?>"> <?php echo $maLigne['rayonLib'] ?></option>
 					<?php
 				}
+
 			?>
 			</select>
+
 			<p>Choisissez le Produit : <select name="choixProduit" id="choixProduit"></p>
 			<?php
 				$requette2="select * from produit where rayonId=$firstRayon order by  produitLib";
