@@ -38,7 +38,6 @@ include ("function.php");
 		<h2>Ajouter un produit a la liste </h2>
 		<br>
 		<div class="milieu">
-			<form id="formAjoutListe" name="fAjoutListe" method="post" action="services.php">
 			Choisissez le rayon : <select name="choixRayon" id="choixRayon">
 			<?php
 				$IsPremierRayon=true;
@@ -69,9 +68,8 @@ include ("function.php");
 				}
 			?>
 			</select>
-			<p>Quantité : <input id="qte" type="text" value="1" name="qteAjouterListe" size="4"></p>
-			<p><button name="buttonAjouterListe" class="bouton">Ajouter ce produit a la liste</button></p>
-			</form>
+			<p>Quantité : <input type="text" value="1" id="qteAjouterListe" size="4"></p>
+			<p><button id="buttonAjouterListe" class="bouton">Ajouter ce produit a la liste</button></p>
 		</div>
 		<br>
 		<h2>Votre liste de courses : </h2></br>

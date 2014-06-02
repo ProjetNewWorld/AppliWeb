@@ -8,7 +8,7 @@ include("commun.php");
  *  @param [in] $infoVoulue l'information voule (ex : membrePrenom)
  *  @return Tableau associatif qui contient les infos du membre
  *  
- *  @details Ex : getInfosMembreByLogin("carnaud","membrePrenom") == cyril
+ *  @details Ex : getInfosMembreByLogin("membrePrenom") == cyril
  */
 function getInfosMembreByLogin($infoVoulue)
 {
@@ -157,7 +157,7 @@ function afficherContenuListe()
 	{
 	?>
 		<hr>
-		<button id="addSelectedItems">Ajouter la sélection au panier</button>
+		<button onclick="ajoutSelection()" id="addSelectedItems">Ajouter la sélection au panier</button>
 	<?php
 	}
 	else
@@ -185,7 +185,7 @@ function afficherContenuPanier()
 		echo $maLigne2['produitLib']." | ";
 		echo "<span id='qte".$maLigne2['produitLib']."'>".$maLigne2['listeQte']."</span>";
 		?>
-		<button class="cancelItem" value="<?php echo $maLigne2['produitId'] ?>">Reposer</button>
+		<button onclick="reposerProduit(<?php echo $maLigne2['produitId'] ?>)" class="cancelItem">Reposer</button>
 		</br>
 		<?php
 		$j++;

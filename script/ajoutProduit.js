@@ -5,7 +5,7 @@ $(document).ready(function() {
 		var qte=$("#qteAjouterListe").val();
 		$.post("script/ajax/ajoutProduit.php", { prod: produit , qtes : qte }).done(function( data ) {
 				 $("#listeDesCourses").html(data).hide().fadeIn(400);
-			})
+			});
 	 });
 });
 
