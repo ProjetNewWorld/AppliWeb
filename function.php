@@ -1,4 +1,3 @@
-
 <?php
 include("commun.php");
 /**
@@ -144,14 +143,17 @@ function afficherContenuListe()
 		echo "<span id='qte".$maLigne['produitLib']."'>".$maLigne['listeQte']."</span>";
 		?>
 		<input type="hidden" id="<?php echo "prod".$i ?>" value="<?php echo $maLigne['produitId'] ?>" />
-		<input type="checkbox" id= "<?php echo "item".$i ?>"/>
+		<div class="checkBox">
+			<input type="checkbox" id="<?php echo "item".$i ?>" />
+			<label for="<?php echo "item".$i ?>"></label>
+		</div>
 		<button id="<?php echo "reportItem".$i ?>">Reporter</button>
 		</br>
 		<?php
 		$i++;
 	}
 	?>
-	<input type="hidden" id="i" value=<?php echo $i ?> />
+	<input type="hidden" id="i" value="<?php echo $i ?>" />
 	<?php
 	if($i>0)
 	{
