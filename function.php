@@ -98,28 +98,62 @@ function creerListe()
 	$rayonActuel="";
 	$requette="select produitLib , rayonLib , listeQte , produitId from contenuliste natural join produit natural join rayon where listeId=$listeId order by rayonLib";
 	$reponse=mysql_query($requette);
-	echo "<div class='center'>";
+	$passage=0;
 	while($maLigne=mysql_fetch_array($reponse))
 	{
 		if($maLigne['rayonLib']!=$rayonActuel)
 		{
-			echo "<hr>";
+			if($passage!=0)
+			{
+				?>
+				</table>
+				</div>
+				<hr>
+				<?php
+			}
 			echo "<h3>".$maLigne['rayonLib']."</h3>";
 			$rayonActuel=$maLigne['rayonLib'];
-			
-		}
-		echo $maLigne['produitLib']." | ";
-		echo "<span class='active' id='qte".$maLigne['produitId']."'>".$maLigne['listeQte']."</span>";
-		?>
-		<input type="hidden" id="<?php echo $maLigne['produitId'] ?>" value="<?php echo $maLigne['produitId'] ?>">
-		<button onclick="lessQte(<?php echo $maLigne['produitId']?>)"><img src="style/img/moins.png"></button>
-		
-		<button onclick="moreQte(<?php echo $maLigne['produitId']?>)"><img src="style/img/plus.png"></button>
-		<button onclick="deleteItem(<?php echo $maLigne['produitId']?>)">Supprimer de la liste</button>
-		</br>
+			?>
+			<div class='listeCentre'>
+			<table width='399'>
 		<?php
+		}
+		$passage++;
+		?>
+		<tr>
+			<td class='nomListe'>
+				<?php
+				echo $maLigne['produitLib'];
+				?>
+			</td>
+			<td class='qteListe'>
+			<?php
+			 	echo " | ";
+			 ?>
+			</td>
+			<td class='qteListe'>
+			<?php
+				echo "<span class='active' id='qte".$maLigne['produitId']."'>".$maLigne['listeQte']."</span>";
+			?>
+			</td>
+			<td>
+				<input type="hidden" id="<?php echo $maLigne['produitId'] ?>" value="<?php echo $maLigne['produitId'] ?>">
+				<button onclick="lessQte(<?php echo $maLigne['produitId']?>)"><img src="style/img/moins.png"></button>
+			</td>
+			<td>
+				<button onclick="moreQte(<?php echo $maLigne['produitId']?>)"><img src="style/img/plus.png"></button>
+			</td>
+			<td>
+				<button onclick="deleteItem(<?php echo $maLigne['produitId']?>)">Supprimer de la liste</button>
+			</td>
+		</tr>
+		<?php	
 	}
-	echo "</div>";
+	$passage=0;
+	?>
+	</table>
+	</div>
+	<?php
 }
 
 function afficherContenuListe()

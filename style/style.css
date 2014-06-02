@@ -1,3 +1,15 @@
+.qteListe{
+	padding-right: 3px;
+	padding-left: 3px;
+}
+.nomListe{
+	width: 50%;
+}
+.listeCentre{
+	width: 399px;
+	text-align: center;
+	margin: auto;
+}
 input[type=checkbox] {
 	visibility: hidden;
 }
