@@ -232,6 +232,15 @@ function afficherContenuListe()
 	else
 	{
 		echo "Votre liste est vide.";
+		// si il y a des produit dans le panier
+		$requetteTestPanier="select count(*) nbProdCaddy from contenuliste where listeId=$listeId and dansCaddy=1";
+		$resultatPanier=mysql_query($requetteTestPanier);
+		$lignePanier=mysql_fetch_array($resultatPanier);
+		//echo "req: ".$requetteTestPanier." - rep: ".$lignePanier['nbProdCaddy'];
+		if($lignePanier['nbProdCaddy']>0)
+		{
+			?><button onclick="finDesCourses()" id="finDesCourses">Fin des courses</button><?php
+		}
 	}
 	echo "</div>";
 }
