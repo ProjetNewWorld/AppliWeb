@@ -12,12 +12,14 @@
 }
 input[type=checkbox] {
 	visibility: hidden;
+	margin-bottom: 0;
 }
 .checkBox {
 	width: 20px;	
 	margin: 20px auto;
 	position: relative;
 	display: inline-block;
+	vertical-align: sub;
 }
 
 .checkBox label {
@@ -103,7 +105,6 @@ label{
 	width: 220px;
 	display: block;
 }
-
 input{ 
 	margin-top: 5px;
 	margin-bottom: 20px;

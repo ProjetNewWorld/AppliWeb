@@ -169,23 +169,56 @@ function afficherContenuListe()
 	{
 		if($maLigne['rayonLib']!=$rayonActuel)
 		{
-			echo "<hr>";
+			if($i!=0)
+			{
+				?>
+				</table>
+				</div>
+				<hr>
+				<?php
+			}
 			echo "<h3>".$maLigne['rayonLib']."</h3>";
 			$rayonActuel=$maLigne['rayonLib'];
+			?>
+			<div class='listeCentre'>
+			<table width='399'>
+			<?php
 		}
-		echo $maLigne['produitLib']." | ";
-		echo "<span id='qte".$maLigne['produitLib']."'>".$maLigne['listeQte']."</span>";
 		?>
-		<input type="hidden" id="<?php echo "prod".$i ?>" value="<?php echo $maLigne['produitId'] ?>" />
-		<div class="checkBox">
-			<input type="checkbox" id="<?php echo "item".$i ?>" />
-			<label for="<?php echo "item".$i ?>"></label>
-		</div>
-		<button id="<?php echo "reportItem".$i ?>">Reporter</button>
-		</br>
+		<tr>
+			<td class='nomListe'>
+			<?php
+				echo $maLigne['produitLib'];
+			?>
+			</td>
+			<td  class='qteListe'>
+			<?php
+				echo " | ";
+			?>
+			</td>
+			<td  class='qteListe'>
+			<?php
+				echo "<span id='qte".$maLigne['produitLib']."'>".$maLigne['listeQte']."</span>";
+			?>
+			</td>
+			<td>
+				<input type="hidden" id="<?php echo "prod".$i ?>" value="<?php echo $maLigne['produitId'] ?>" />
+				<div class="checkBox">
+					<input type="checkbox" id="<?php echo "item".$i ?>" />
+					<label for="<?php echo "item".$i ?>"></label>
+				</div>
+			</td>
+			<td>
+			<button id="<?php echo "reportItem".$i ?>">Reporter</button>
+			</td>
+			</br>
 		<?php
 		$i++;
 	}
+	?>
+	</table>
+	</div>
+	<?php
 	?>
 	<input type="hidden" id="i" value="<?php echo $i ?>" />
 	<?php
@@ -215,13 +248,42 @@ function afficherContenuPanier()
 	{
 		if($maLigne2['rayonLib']!=$rayonActuel2)
 		{
+			if($j!=0)
+			{
+				?>
+				</table>
+				</div>
+				<hr>
+				<?php
+			}
 			echo "<h3>".$maLigne2['rayonLib']."</h3>";
 			$rayonActuel2=$maLigne2['rayonLib'];
+			?>
+			<div class='listeCentre'>
+			<table width='399'>
+			<?php
 		}
-		echo $maLigne2['produitLib']." | ";
-		echo "<span id='qte".$maLigne2['produitLib']."'>".$maLigne2['listeQte']."</span>";
 		?>
-		<button onclick="reposerProduit(<?php echo $maLigne2['produitId'] ?>)" class="cancelItem">Reposer</button>
+		<tr>
+			<td class='nomListe'>
+			<?php
+				echo $maLigne2['produitLib'];
+			?>
+			</td>
+			<td  class='qteListe'>
+			<?php
+				echo " | ";
+			?>
+			</td>
+			<td  class='qteListe'>
+			<?php
+				echo "<span id='qte".$maLigne2['produitLib']."'>".$maLigne2['listeQte']."</span>";
+			?>
+			</td>
+			<td>
+				<button onclick="reposerProduit(<?php echo $maLigne2['produitId'] ?>)" class="cancelItem">Reposer</button>
+			</td>
+		</tr>
 		</br>
 		<?php
 		$j++;
@@ -230,7 +292,11 @@ function afficherContenuPanier()
 	{
 		echo "Votre panier est vide.";				
 	}
-	echo "</div>";
+	?>
+	</table>
+	</div>
+	<?php
+	$j=0;
 }
 function afficherContenu()
 {
