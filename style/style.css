@@ -176,17 +176,14 @@ hr{
 	position: center;
 }
 #logo{
-	margin-right: 20px;
-	top: 97px;
-	left: 5%;
+	margin-top: -170px;
+	margin-left: 5%;
 	width: 100px;
 	height: 200px;
 	background-image: url("img/logoListeCourse.png");
-	float: left;
 	background-size: 100px;
-	position: absolute;
-	z-index: 1;
 	background-repeat: no-repeat;
+	position: relative;
 }
 nav{
 	background-color: #000;
@@ -350,4 +347,30 @@ footer{
 }
 ::selection{
 	background-color: orange;
+}
+@media screen and (max-width: 1020px){
+	#logo{
+		margin: auto;
+		background-size: 80px;
+		margin-top: 8px;
+	}
+	#titreHeader-l1{
+		font-weight: 300;
+		font-size: 25px;
+		text-transform: uppercase;
+		position: center;
+	}
+	#titreHeader-l2{
+		font-weight: 700;
+		font-size: 35px;
+		line-height: 80px;
+		letter-spacing: -1px;
+		text-transform: uppercase;
+	}
+	#titreHeader-l3{
+		font-weight: 300;
+		font-size: 25px;
+		text-transform: uppercase;
+		position: center;
+	}
 }
