@@ -17,6 +17,8 @@ if(membreHasFamille()!="false")// si le membre a une famille on le redirige
 	<meta charset="utf-8">
 	<title>Créer une famille</title>
 	<link rel="stylesheet" href="style/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/ico" href="style/img/favicon.ico"/>
 </head>
 <body>
 	<?php include("header.html") ?>

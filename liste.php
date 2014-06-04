@@ -15,8 +15,7 @@ include ("function.php");
 	<script type="text/javascript" src="./script/gererListe.js"></script>
 	<script type="text/javascript" src="./script/gererQteAndDeleteItem.js"></script>
 	<script type="text/javascript" src="./script/ajoutProduit.js"></script>
-
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/ico" href="style/img/favicon.ico"/>
 </head>
 <body>

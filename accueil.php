@@ -13,6 +13,8 @@ include ("function.php");
 	<link rel="stylesheet" href="style/style.css">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	<link rel="icon" type="image/ico" href="style/img/favicon.ico"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body>
 	<?php include("header.html") ?>

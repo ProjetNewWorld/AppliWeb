@@ -11,6 +11,7 @@ include("commun.php");
 	<title>Connexion</title>
 	<link rel="stylesheet" href="style/style.css">
 	<link rel="icon" type="image/ico" href="style/img/favicon.ico"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body class="bodyConnexion">
 	<?php include("header.html") ?>
