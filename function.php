@@ -211,7 +211,7 @@ function afficherContenuListe()
 				</div>
 			</td>
 			<td>
-			<button id="<?php echo "reportItem".$i ?>">Reporter</button>
+			<button onclick="reportProduit(<?php echo $maLigne['produitId'] ?>,<?php echo $maLigne['listeQte'] ?>)" id="<?php echo "reportItem".$i ?>">Reporter</button>
 			</td>
 			</br>
 		<?php
@@ -240,8 +240,13 @@ function afficherContenuListe()
 		$requetteTestPanier="select count(*) nbProdCaddy from contenuliste where listeId=$listeId and dansCaddy=1";
 		$resultatPanier=mysql_query($requetteTestPanier);
 		$lignePanier=mysql_fetch_array($resultatPanier);
+		// ou s'il y a une liste suivante
+		$familleId=getInfosMembreByLogin("familleId");
+		$requetteTestListeNext="select listeId from liste where familleId=$familleId and next=1";
+		$resultatNext=mysql_query($requetteTestListeNext);
+		$ligneNext=mysql_fetch_array($resultatNext);
 		//echo "req: ".$requetteTestPanier." - rep: ".$lignePanier['nbProdCaddy'];
-		if($lignePanier['nbProdCaddy']>0)
+		if($lignePanier['nbProdCaddy']>0 || $ligneNext['listeId']!=null)
 		{
 			?>
 			<div class="center">
@@ -297,7 +302,7 @@ function afficherContenuPanier()
 			?>
 			</td>
 			<td>
-				<button onclick="reposerProduit(<?php echo $maLigne2['produitId'] ?>)" class="cancelItem">Reposer</button>
+				<button onclick="reposerProduit(<?php echo $maLigne2['produitId'] ?>)">Reposer</button>
 			</td>
 		</tr>
 		</br>
@@ -334,13 +339,4 @@ function afficherContenu()
 		<?php
 }
 
-function cancelItem($produitId)
-{
-	echo "<script>alert(\"hey\")</script>";
-	echo "<script>alert(\"$produitId\")</script>";
-/*	$listeId=getNoListe();
-	$requette="update contenuliste set dansCaddy=0 where listeId=$listeId and produitId=$produitId";
-	mysql_query($requette);
-	afficherContenu();*/
-}
 ?>

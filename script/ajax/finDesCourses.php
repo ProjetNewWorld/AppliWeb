@@ -6,13 +6,15 @@ $familleId=getInfosMembreByLogin("familleId");
 	$requette="update liste set enCours=0 where listeId=$listeId";
 	mysql_query($requette);
 	// si aucune liste existe créer une nouvelle
-	$requette2="select listeId from where familleId=$familleId and next=1";
+	$requette2="select listeId from liste where familleId=$familleId and next=1";
 	$resultat=mysql_query($requette2);
-	
-	if(!$resultat==null)
+	$ligne=mysql_fetch_array($resultat);
+	$idNewListe=$ligne['listeId'];
+
+	if($idNewListe!=null)
 	{
 		// utilisé la liste suivante comme liste en cours
-		$requette3="update liste set enCours=1, next=0 where listeId=$resultat";
+		$requette3="update liste set enCours=1, next=0 where listeId=$idNewListe";
 		mysql_query($requette3);
 	}
 	else
