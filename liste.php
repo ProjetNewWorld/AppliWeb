@@ -41,9 +41,7 @@ include ("function.php");
 			<?php
 				$IsPremierRayon=true;
 				$requette="select distinct rayonId , rayonLib from rayon natural join produit order by rayonLib";
-
 				$test=0;
-
 				$reponse=mysql_query($requette);
 				while($maLigne=mysql_fetch_array($reponse))
 				{
@@ -52,10 +50,8 @@ include ("function.php");
 					?><option value="<?php echo $maLigne['rayonId'] ?>"> <?php echo $maLigne['rayonLib'] ?></option>
 					<?php
 				}
-
 			?>
 			</select>
-
 			<p>Choisissez le Produit : <select name="choixProduit" id="choixProduit"></p>
 			<?php
 				$requette2="select * from produit where rayonId=$firstRayon order by  produitLib";
@@ -75,7 +71,6 @@ include ("function.php");
 		<div id="listeDesCourses">
 			<?php
 				creerListe();
-			
 			?>
 		</div>
 	</div>
