@@ -149,7 +149,10 @@ function creerListe()
 		</tr>
 		<?php	
 	}
-	$passage=0;
+	if($passage==0)
+	{
+			echo "<div class='info'>Votre panier est vide.</div>";
+	}
 	?>
 	</table>
 	</div>
@@ -164,7 +167,6 @@ function afficherContenuListe()
 	//echo $requette;
 	$reponse=mysql_query($requette);
 	$i=0;
-	echo "<div class='center'>";
 	while($maLigne=mysql_fetch_array($reponse))
 	{
 		if($maLigne['rayonLib']!=$rayonActuel)
@@ -226,12 +228,14 @@ function afficherContenuListe()
 	{
 	?>
 		<hr>
-		<button onclick="ajoutSelection()" id="addSelectedItems">Ajouter la sélection au panier</button>
+		<div class="center">
+			<button class="bouton" onclick="ajoutSelection()" id="addSelectedItems">Ajouter la sélection au panier</button>
+		</div>
 	<?php
 	}
 	else
 	{
-		echo "Votre liste est vide.";
+		echo "<div class='info'>Votre liste est vide.</div>";
 		// si il y a des produit dans le panier
 		$requetteTestPanier="select count(*) nbProdCaddy from contenuliste where listeId=$listeId and dansCaddy=1";
 		$resultatPanier=mysql_query($requetteTestPanier);
@@ -239,10 +243,13 @@ function afficherContenuListe()
 		//echo "req: ".$requetteTestPanier." - rep: ".$lignePanier['nbProdCaddy'];
 		if($lignePanier['nbProdCaddy']>0)
 		{
-			?><button onclick="finDesCourses()" id="finDesCourses">Fin des courses</button><?php
+			?>
+			<div class="center">
+				<button class="bouton" onclick="finDesCourses()" id="finDesCourses">Fin des courses</button>
+			</div>
+			<?php
 		}
 	}
-	echo "</div>";
 }
 
 function afficherContenuPanier()
@@ -299,7 +306,7 @@ function afficherContenuPanier()
 	}
 	if($j==0)
 	{
-		echo "Votre panier est vide.";				
+		echo "<div class='info'>Votre panier est vide.</div>";				
 	}
 	?>
 	</table>
