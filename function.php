@@ -213,7 +213,6 @@ function afficherContenuListe()
 			<td>
 			<button onclick="reportProduit(<?php echo $maLigne['produitId'] ?>,<?php echo $maLigne['listeQte'] ?>)" id="<?php echo "reportItem".$i ?>">Reporter</button>
 			</td>
-			</br>
 		<?php
 		$i++;
 	}
