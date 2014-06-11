@@ -13,22 +13,24 @@ include ("function.php");
   <link rel="stylesheet" href="style/style.css">
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   <script type="text/javascript" src="./script/addMembreToFamille.js"></script>
+  <script type="text/javascript" src="./script/menuResponsive.js"></script>
   <link rel="icon" type="image/ico" href="style/img/favicon.ico"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <?php include("header.html") ?>
+    <div class="menuCache">==</div>
 	<nav>
     <a href="accueil.php">Accueil</a>
-    //
+    
     <?php
     if(membreHasFamille()!="false")
     {
       ?>
     <a href="liste.php">Ma liste</a>
-    //
+    
     <a href="courses.php">Les courses</a>
-    //
+    
 
     <a href="gererFamille.php">Ma famille</a>
       <?php
@@ -40,9 +42,9 @@ include ("function.php");
       <?php
     }
     ?>
-    //
+    
     <a class="active" href="profil.php">Mon compte</a>
-    //
+    
     <a href="connexion.php">Déconnexion</a>
   </nav>
 	<h1>Gérer mon profil</h1>

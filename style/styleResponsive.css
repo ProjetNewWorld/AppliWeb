@@ -1,0 +1,278 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+header{
+	height: 300px;
+	background: url("img/header.jpg") center top fixed;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-webkit-background-size: cover;
+	background-size: cover;
+	text-align: center;
+	color: white;
+	border-bottom: solid;
+	border-bottom-color: rgb(255, 255, 255);
+}
+body{
+	background-color: #FFF;
+	font-family: "Open Sans", sans-serif;
+	color: #737373;
+	font-size: 16px;
+	line-height: 1.75;
+}
+#titreHeader{
+	padding-top: 30px;
+}
+#titreHeader-l1{
+	font-weight: 300;
+	font-size: 45px;
+	text-transform: uppercase;
+	position: center;
+}
+#titreHeader-l2{
+	font-weight: 700;
+	font-size: 68px;
+	line-height: 80px;
+	letter-spacing: -1px;
+	text-transform: uppercase;
+}
+#titreHeader-l3{
+	font-weight: 300;
+	font-size: 45px;
+	text-transform: uppercase;
+	position: center;
+}
+#logo{
+	/*margin-right: 20px;*/
+	margin-top: -170px;
+	margin-left: 5%;
+	width: 100px;
+	height: 500px;
+	background-image: url("img/logoListeCourse.png");
+	background-size: 100px;
+	position: absolute;
+	background-repeat: no-repeat;
+	position: relative;
+}
+nav{
+	background-color: #000;
+	text-transform: uppercase;
+	opacity: 0.9;
+	text-align: center;
+	color: #FFF;
+	padding: 20px;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 20px;
+	text-align: center;
+	padding-bottom: 40px;
+}
+nav a{
+	padding: 25px;
+	margin: auto;
+}
+nav ul{
+	width: 775px;
+	margin: auto;
+
+}
+nav li{
+	float: left;
+	text-align: center;
+	list-style: none;
+	margin: auto;
+}
+/* Permet de remettre les floats a 0 */
+.clear{
+	clear: both;
+}
+/* Ajout d'une classe active pour le menu */
+.active{
+	color:orange;
+}
+a{
+	color: #FFF;
+	text-decoration: none;
+}
+.container{
+	/*width: 1100px*/
+	margin: 0 auto;
+	position: relative;
+	text-align: justify;
+	padding-left: 6%;
+}
+.container p{
+	padding-left: 20%;
+}
+.bodyConnexion{
+	background-color: #F2F2F2;
+}
+.error{
+	color: red !important;
+	text-align: center;
+	padding: 20px;
+}
+.error:before{
+	content:url(img/error.png);
+}
+.error:after{
+	content:url(img/error.png);
+}
+.info{
+	color: blue !important;
+	text-align: center;
+	/*padding: 20px;*/
+}
+.info:before{
+	content:url(img/info.png);
+}
+.info:after{
+	content:url(img/info.png);
+}
+.valide{
+	color: green !important;
+	text-align: center;
+	padding: 20px;
+}
+.valide:before{
+	content:url(img/ok.png);
+}
+#logoConnexion{
+	float: left;
+	margin-left: 20%;
+}
+#h1Connexion{
+	margin-top: -50px;
+}
+#banniere{
+	background-color: gray;
+	margin-bottom: 100px;
+	margin-top: 100px;
+	text-align: center;
+}
+#blocConnexion{
+	background-color: black;
+	opacity: 0.85;
+	color: white;
+	margin: auto;
+	width: 300px;
+	padding:40px;
+	margin-top: 40px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+#blocConnexion input{
+	margin-bottom: 10px;
+	width: 300px;
+}
+#formConnexion label{
+	width: 110px;
+}
+#formConnexion a{
+	float: right;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	color: white;
+}
+h1{
+	padding: 10px;
+	color: #000;
+	line-height: 65px;
+	text-align: center;
+	font-weight: 700;
+	font-size: 60px;
+	line-height: 80px;
+	letter-spacing: -1px;
+}
+h2{
+	color: #000;
+	line-height: 45px;
+	text-align: center;
+}
+footer{
+	margin-top: 30px;
+	text-align: center;
+	color: #FFF;
+	padding: 20px;
+	font-weight: 700;
+	line-height: 20px;
+	background-color: #000;
+	opacity: 0.9;
+}
+::selection{
+	background-color: gray;
+}
+.js .nav-collapse {
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+}
+@media screen and (min-width: 40em) {
+  .js .nav-collapse {
+    position: relative;
+  }
+  .js .nav-collapse.closed {
+    max-height: none;
+  }
+  .nav-toggle {
+    display: none;
+  }
+}
+@media screen and (max-width: 1020px){ 
+	#logo{
+		margin: auto;
+		background-size: 80px;
+		margin-top: 8px;
+	}
+	#titreHeader-l1{
+		font-weight: 300;
+		font-size: 25px;
+		text-transform: uppercase;
+		position: center;
+	}
+	#titreHeader-l2{
+		font-weight: 700;
+		font-size: 35px;
+		line-height: 80px;
+		letter-spacing: -1px;
+		text-transform: uppercase;
+	}
+	#titreHeader-l3{
+		font-weight: 300;
+		font-size: 25px;
+		text-transform: uppercase;
+		position: center;
+	}
+	nav{
+		text-align: center;
+		float: none;
+	}
+}
+@media screen and (max-width: 820px){ 
+	nav{
+		background: none;
+		color: black;
+		padding: 0;
+		margin: 0;
+	}
+	nav ul{
+		width: 100%;
+	}
+	nav li{
+		float: none;
+		margin: 0;
+		padding: 0;
+	}
+	nav a{
+		display: block;
+		height: 25px;
+		background-color: black;
+		padding-top: 25px;
+		border-bottom: white solid 1px;
+
+	}
+}

@@ -19,16 +19,19 @@ if(membreHasFamille()!="false")// si le membre a une famille on le redirige
 	<link rel="stylesheet" href="style/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/ico" href="style/img/favicon.ico"/>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"type="text/javascript"></script>
+	<script type="text/javascript" src="./script/menuResponsive.js"></script>
 </head>
 <body>
 	<?php include("header.html") ?>
+	<div class="menuCache">==</div>
 	<nav>
 		<a href="accueil.php">Accueil</a>
-		//
+		
 		<a class="active" href="creationFamille.php">Créer ma famille</a>
-		//
+		
 		<a href="profil.php">Mon compte</a>
-		//
+		
 		<a href="connexion.php">Déconnexion</a>
 	</nav>
 	<h1>Création d'une famille</h1>
