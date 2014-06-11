@@ -15,23 +15,25 @@ include ("function.php");
 	<script type="text/javascript" src="./script/ajouterSelectionAuPanier.js"></script>
 	<script type="text/javascript" src="./script/finDesCourses.js"></script>
 	<script type="text/javascript" src="./script/reportProduit.js"></script>
+	<script type="text/javascript" src="./script/menuResponsive.js"></script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/ico" href="style/img/favicon.ico"/>
 </head>
 <body>
 	<?php include("header.html") ?>
+	<div class="menuCache">==</div>
 	<nav>
 		<a href="accueil.php">Accueil</a>
-		//
+		
 		<a href="liste.php">Ma liste</a>
-		//
+		
 		<a class="active" href="courses.php">Les courses</a>
-		//
+		
 		<a href="gererFamille.php">Ma famille</a>
-		//
+		
 		<a href="profil.php">Mon compte</a>
-		//
+		
 		<a href="connexion.php">Déconnexion</a>
 	</nav>
 	<h1>Faire les courses</h1>
