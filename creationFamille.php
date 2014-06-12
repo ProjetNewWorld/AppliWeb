@@ -24,7 +24,7 @@ if(membreHasFamille()!="false")// si le membre a une famille on le redirige
 </head>
 <body>
 	<?php include("header.html") ?>
-	<div class="menuCache">==</div>
+	<div class="menuCache">≡</div>
 	<nav>
 		<a href="accueil.php">Accueil</a>
 		

@@ -19,7 +19,7 @@ include ("function.php");
 </head>
 <body>
 	<?php include("header.html") ?>
-	<div class="menuCache">==</div>
+	<div class="menuCache">≡</div>
 	<nav>
 		<a class="active" href="accueil.php">Accueil</a>
 		

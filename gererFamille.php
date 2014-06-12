@@ -20,7 +20,7 @@ include('function.php');
 </head>
 <body>
     <?php include("header.html") ?>
-    <div class="menuCache">==</div>
+    <div class="menuCache">≡</div>
 	<nav>
 		<a href="accueil.php">Accueil</a>
 		
