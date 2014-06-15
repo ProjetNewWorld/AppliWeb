@@ -1,7 +1,7 @@
 <?php session_start();
 //connection à la base de données
 //hote
-$host="127.0.0.1";
+$host="localhost";
 //nom de l'utilisateur
 $user="userLDC";
 //le mot de passe de l'utilisateur
